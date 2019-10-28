@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  type: one
+  mineral_name: MyString
+  description: MyText
+  location: MyText
+  price: 1
+  image: MyText
+  sold: 1
+
+two:
+  user: two
+  type: two
+  mineral_name: MyString
+  description: MyText
+  location: MyText
+  price: 1
+  image: MyText
+  sold: 1
