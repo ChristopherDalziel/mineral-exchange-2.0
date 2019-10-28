@@ -1,11 +1,6 @@
 <%= form_with model: user_detail, local: true do |form| %>
 
 <section>
-           <div>
-            <%= form.label :user_id%>
-            <%= form.select :user_id, options_for_select( User.all.collect { |u| [u.email, u.id] }, :selected => listing.user_id ) %>
-        </div>
-
          <div>
             <%= form.label :phone %>
             <%= form.number_field :phone %>

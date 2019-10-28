@@ -28,9 +28,17 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
-      <div class="field">
+      <!-- <div class="field">
         <%= f.label :is_seller %><br />
         <%= f.text_field :is_seller %>
+      </div> -->
+
+      <div>
+        <%= f.label 'What type of user would you like to sign up as?' %> <br>
+        <%= f.label :is_seller, "Seller", :value => true %>
+        <%= f.radio_button :is_seller, true %>
+        <%= f.label :is_seller, "Buyer", :value => false %>
+        <%= f.radio_button :is_seller, false %>
       </div>
 
      

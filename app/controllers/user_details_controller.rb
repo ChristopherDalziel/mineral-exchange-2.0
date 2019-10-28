@@ -1,11 +1,11 @@
 class UserDetailsController < ApplicationController
 
   def index 
-    @user_detail = User_detail.all
+    @user_detail = UserDetail.all
   end
 
   def new
-    @user_detail = User_detail.new
+    @user_detail = UserDetail.new
   end
 
   def update
@@ -23,7 +23,7 @@ class UserDetailsController < ApplicationController
     @user_detail = User_details.new(user_detail_params)
 
     if @user_detail.save
-      redirect_to @listing
+      redirect_to @user_detail
     else
       render :new
     end

@@ -1,1 +1,13 @@
-<%= render 'form', user_detail: @user_detail %>
+<div class="container">
+  <%= render '/pages/nav' %>
+
+  <div class="hero-container">
+    <div class="hero-box">
+       <p>
+        Email Address: <%= current_user.email %> <br>
+        Buyer or Seller?: <%= current_user.is_seller %>
+        </p>
+    <%= render 'form', user_detail: @user_detail %>
+    </div>
+  </div>
+</div>
