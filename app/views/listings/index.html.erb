@@ -1,7 +1,7 @@
 <div class="container">
   <%= render '/pages/nav' %>
 
-   <%= link_to 'New Snake', new_listing_path %>
+   <%= link_to 'Create New Listing', new_listing_path %>
 
    <!-- (:user_id, :type_id :mineral_name, :description, :location, :price, :image) -->
 
@@ -22,7 +22,7 @@
         <% @listings.each do |listing| %>
           <tr>
             <td><%= listing.id %></td>
-            <td><%= listing.user_id %>
+            <td><%= listing.user_id%>
             <td><%= listing.type.name %></td>
             <td><%= listing.mineral_name %></td>
             <td><%= listing.description %></td>

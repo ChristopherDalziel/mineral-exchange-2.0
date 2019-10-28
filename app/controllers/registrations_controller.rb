@@ -8,4 +8,10 @@ class RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
+  private
+  
+  def after_sign_up_path_for(resource)
+    new_user_detail_path
+  end 
+
 end

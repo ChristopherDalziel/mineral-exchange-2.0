@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   delete "/listings/:id", to: "listings#destroy"
   get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
 
+  get "/user_details", to: "user_details#index", as: "user_details"
+  post "/user_details", to: "user_details#create"
+  get "/user_details/new", to: "user_details#new", as: "new_user_detail"
+
   delete "/listings/:id", to: "listings#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
