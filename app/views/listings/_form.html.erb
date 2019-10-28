@@ -1,0 +1,36 @@
+<%= form_with model: listing, local: true do |form| %>
+
+<!-- (:user_id, :type_id :mineral_name, :description, :location, :price, :image) -->
+
+<section>
+
+         <div>
+            <%= form.label :type_id %>
+            <%= form.select :type_id, options_for_select( Type.all.collect { |u| [u.name, u.id] }, :selected => listing.type_id ) %>
+        </div>
+        <div>
+            <%= form.label :mineral_name %>
+            <%= form.text_field :mineral_name, :autofocus => true, :required => true, :placeholder => "Enter Title here", :pattern => "[^1-9]*" %>
+        </div>
+        <div>
+            <%= form.label :description %>
+            <%= form.text_field :description, :required => true, :placeholder => "Enter a description of snakes", :pattern => "[^0-9]*"%>
+        </div>
+         <div>
+            <%= form.label :location %>
+            <%= form.text_field :location %>
+        </div>
+        <div>
+            <%= form.label :price %>
+            <%= form.number_field :price, min: 0 %>
+        </div>
+        <div>
+            <%= form.label :image %>
+            <%= form.file_field :image, accept: 'image/jpeg, image/gif, image/png, imgage/jpg' %>
+        </div>
+
+        <div class="submit-button">
+            <%= form.submit %>
+        </div>
+    <% end %>
+</section>

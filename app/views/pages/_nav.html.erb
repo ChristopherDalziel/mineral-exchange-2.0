@@ -1,0 +1,15 @@
+<div class="nav-c">
+  <nav>
+    <ul>
+      <li><% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to 'Login', new_user_session_path %>
+          <% end %></li>
+      <li>Profile</li>
+      <li><%= link_to 'Homepage', root_path %></li>
+      <li><%= link_to 'Listings', listings_path %></li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+</div>

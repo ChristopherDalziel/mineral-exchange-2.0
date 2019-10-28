@@ -1,1 +1,17 @@
-test
+<div class="container">
+  <%= render 'nav' %>
+
+  <div class="hero-container">
+    <div class="hero-box">
+      <div class="logo"></div>
+      <h1>The Mineral Exchange</h1>
+        <!-- <%= link_to 'Sign up', new_user_registration_path %> -->
+        <%= button_to "Sign up", new_user_registration_path, :method => "get" %> 
+        <%= button_to "Sign up", new_user_registration_path, :method => "get" %>
+  
+    </div>
+  </div>
+
+  <%= render 'footer' %>
+
+</div> 
