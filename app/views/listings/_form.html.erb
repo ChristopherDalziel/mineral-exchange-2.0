@@ -3,6 +3,10 @@
 <!-- (:user_id, :type_id :mineral_name, :description, :location, :price, :image) -->
 
 <section>
+           <div>
+            <%= form.label :user_id%>
+            <%= form.select :user_id, options_for_select( User.all.collect { |u| [u.email, u.id] }, :selected => listing.user_id ) %>
+        </div>
 
          <div>
             <%= form.label :type_id %>
@@ -26,7 +30,7 @@
         </div>
         <div>
             <%= form.label :image %>
-            <%= form.file_field :image, accept: 'image/jpeg, image/gif, image/png, imgage/jpg' %>
+            <%= form.text_field :image %>
         </div>
 
         <div class="submit-button">

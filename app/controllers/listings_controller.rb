@@ -9,8 +9,18 @@ class ListingsController < ApplicationController
     end
   
     def update
-      @listing.update(listing_params)
-      redirect_to @listing
+      if @listing.update(listing_params)
+        redirect_to @listing
+      else
+        render :edit
+      end
+  
+  
+      # listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
+  
+      # @listing.update(listing_params)
+     
+      # redirect_to listings_path
     end
   
     def edit
@@ -19,13 +29,15 @@ class ListingsController < ApplicationController
     def create
       listing_params = params.require(:listing).permit(:user_id, :type_id, :mineral_name, :description, :location, :price, :image)
 
+      @listing = Listing.new(listing_params)
+
       # Listing user:references type:references mineral_name:string description:text location:text price:integer image:text sold:integer
   
       # @listing = current_user.listings.create(listing_params)
       # @listing.traits << Trait.find(params[:listing][:trait_id])
-      @listing.save
+      # @listing.save
   
-      if @listing.save 
+      if @listing.save
         redirect_to @listing
       else
         render :new
