@@ -94,6 +94,24 @@ font-family: 'Raleway', sans-serif; */
   font-size: 15px;
 }
 
+.field {
+  background: yellow;
+}
+
+/* Buttons on log-in / sign up etc.. can't seem to split the input fields from the button */
+input {
+  cursor: pointer;
+  width: 90%;
+  border: none;
+  background: black;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+
+
 /* Table */
 
 table {
@@ -117,3 +135,4 @@ th, td {
 
 tr:nth-child(even) {background-color: #f2f2f2;}
 tr:hover {background-color:lightgray;}
+

@@ -5,15 +5,15 @@
     <div class="hero-box">
 
       <div>
-        <% @user_detail.each do |userdetail| %>
-          Name: <%= userdetail.first_name %>
+      
+          Name: <%= @user_detail %>
           Email Address: <%= current_user.email %> <br>
           Account Type: <% if current_user.is_seller == true %>
                               <%= "Seller" %>
                                 <% else %>
                                   <%= "Buyer"  %>
                               <% end %>
-          <% end %>
+       
       </div>
 
     </div>

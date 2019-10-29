@@ -19,7 +19,6 @@ class UserDetailsController < ApplicationController
     
   def create
     user_detail_params = params.require(:user_detail).permit( :user_id, :contact_number, :first_name, :lastname, :address_line_1, :address_line_2, :suburb, :state_id, :postcode )
-    byebug
     @user_detail = UserDetail.new(user_detail_params)
 
     if @user_detail.save
@@ -29,6 +28,8 @@ class UserDetailsController < ApplicationController
     end
 
   end
+
+  private 
 
   def user_detail_params
     user_detail_params = params.require(:user_detail).permit(:user_id, :contact_number, :first_name, :lastname, :address_line_1, :address_line_2, :suburb, :state_id, :postcode)

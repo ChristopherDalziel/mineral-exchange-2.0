@@ -6,7 +6,11 @@
             <% else %>
               <%= link_to 'Login', new_user_session_path %>
           <% end %></li>
-      <li>Profile</li>
+      <li><% if user_signed_in? %>
+            <%= link_to 'Profile', user_details_path %>
+              <% else %>
+                <%= link_to 'Profile', new_user_session_path %></li>
+            <% end %>
       <li><%= link_to 'Homepage', root_path %></li>
       <li><%= link_to 'Listings', listings_path %></li>
       <li>Contact</li>
