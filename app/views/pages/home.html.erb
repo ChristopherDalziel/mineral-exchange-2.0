@@ -5,8 +5,13 @@
     <div class="hero-box">
       <div class="logo"></div>
       <h1>The Mineral Exchange</h1>
-        <!-- <%= link_to 'Sign up', new_user_registration_path %>
-        <%= button_to "Sign up", new_user_registration_path, :method => "get" %> -->
+        
+        <% if user_signed_in? %>
+          <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= button_to 'Login', new_user_session_path %>
+        <% end %>
+
         <%= button_to "Sign up", new_user_registration_path, :method => "get" %>
   
     </div>

@@ -1,19 +1,17 @@
-<div>
-      
-          Name: <%= @current_user.user_detail.first_name %>
-                <%= @current_user.user_detail.lastname %> <br>
-          Contact Number: <%= @current_user.user_detail.contact_number %><br>
-          Address: <%= @current_user.user_detail.address_line_1 %><br>
-                   <%= @current_user.user_detail.address_line_2 %><br>
-          Suburb: <%= @current_user.user_detail.suburb %><br>
-          State: <%= @current_user.user_detail.state_id %><br>
-          Postcode: <%= @current_user.user_detail.postcode %><br>
-          Email Address: <%= current_user.email %> <br>
-          Account Type: <% if current_user.is_seller == true %>
-                              <%= "Seller" %>
-                                <% else %>
-                                  <%= "Buyer"  %>
-                              <% end %> <br>
-                              <%= link_to 'Edit Profile', edit_user_detail_path(@current_user.id) %>
-       
-      </div>
+<div>  
+  Name: <%= @current_user.user_detail.first_name %>
+        <%= @current_user.user_detail.lastname %> <br>
+  Contact Number: <%= @current_user.user_detail.contact_number %><br>
+  Address: <%= @current_user.user_detail.address_line_1 %><br>
+            <%= @current_user.user_detail.address_line_2 %><br>
+  Suburb: <%= @current_user.user_detail.suburb %><br>
+  State: <%= @current_user.user_detail.state_id %><br>
+  Postcode: <%= @current_user.user_detail.postcode %><br>
+  Email Address: <%= current_user.email %> <br>
+  Account Type: <% if current_user.is_seller == true %>
+                      <%= "Seller" %>
+                        <% else %>
+                          <%= "Buyer"  %>
+                      <% end %> <br>
+                      <%= link_to 'Edit Profile', edit_user_detail_path(@current_user.id) %>   
+</div>
