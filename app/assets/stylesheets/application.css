@@ -21,31 +21,29 @@
 /* font-family: 'Montserrat Subrayada', sans-serif; 
 font-family: 'Raleway', sans-serif; */
 
- * {
-   margin: 0;
-   padding: 0;
-   font-family: 'Raleway', sans-serif;
- }
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
 
- h1 {
-  font-family: 'Montserrat Subrayada', sans-serif;
- }
+h1 {
+font-family: 'Montserrat Subrayada', sans-serif;
+}
 
- .container {
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
-   height: 100vh;
-   width: 100vw;
-   background-image: url(/assets/Mineral-Background);
-   background-position: center;
-   background-size: 106%;
-   /* background-color: black; */
-   
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/assets/Mineral-Background);
+  background-position: center;
+  background-size: 106%;
+  /* background-color: black; */
+  
+}
  
-
-
 .hero-container {
   display: flex;
 	justify-content: space-evenly;
@@ -105,23 +103,17 @@ font-family: 'Raleway', sans-serif; */
   font-size: 15px;
 }
 
-.field {
-  background: yellow;
-}
-
-/* Buttons on log-in / sign up etc.. can't seem to split the input fields from the button */
-/* input {
+[type="email"], [type="password"]{
   cursor: pointer;
   width: 90%;
   border: none;
-  background: black;
-  color: #FFF;
+  background: white;
+  color:black;
   margin: 0 0 5px;
   padding: 10px;
   font-size: 15px;
-} */
-
-
+  border: solid 1px black;
+}
 
 /* Table */
 
@@ -147,3 +139,18 @@ th, td {
 tr:nth-child(even) {background-color: #f2f2f2;}
 tr:hover {background-color:lightgray;}
 
+.test form input[value="Login"]:hover {
+  background-color: #DC3F5C;
+  color: white;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.test form input[value="Sign up"]:hover {
+  background-color: #4E7ABC;
+  color: white;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
