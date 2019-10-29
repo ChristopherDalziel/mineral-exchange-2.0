@@ -2,16 +2,11 @@
 
 <!-- (:user_id, :type_id :mineral_name, :description, :location, :price, :image) -->
 
-<section>
-           <div>
-            <%= form.label :user_id%>
-            <%= form.select :user_id, options_for_select( User.all.collect { |u| [u.email, u.id] }, :selected => listing.user_id ) %>
-        </div>
-
+<section> <br>
          <div>
             <%= form.label :type_id %>
             <%= form.select :type_id, options_for_select( Type.all.collect { |u| [u.name, u.id] }, :selected => listing.type_id ) %>
-        </div>
+        </div> <br>
         <div>
             <%= form.label :mineral_name %>
             <%= form.text_field :mineral_name, :autofocus => true, :required => true, :placeholder => "Enter Title here", :pattern => "[^1-9]*" %>

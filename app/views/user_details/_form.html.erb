@@ -26,8 +26,8 @@
             <%= form.text_field :suburb %>
         </div>
         <div>
-            <%= form.label :state %>
-            <%= form.select :state, options_for_select( State.all.collect {|u| [u.name, u.id]}, :selected => user_detail.state_id) %>
+            <%= form.label :state_id %>
+            <%= form.select :state_id, options_for_select( State.all.collect {|u| [u.name, u.id]}, :selected => user_detail.state_id) %>
         </div>
         <div>
             <%= form.label :postcode %>

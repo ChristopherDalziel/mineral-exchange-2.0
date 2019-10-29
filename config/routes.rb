@@ -18,8 +18,13 @@ Rails.application.routes.draw do
   get "/user_details", to: "user_details#index", as: "user_details"
   post "/user_details", to: "user_details#create"
   get "/user_details/new", to: "user_details#new", as: "new_user_detail"
+  put "/user_details/:id", to: "user_details#update"
+  patch "/user_details/:id", to: "user_details#update", as: "user_detail"
+  delete "/user_details/:id", to: "user_details#destroy"
+  get "/user_details/:id/edit", to: "user_details#edit", as: "edit_user_detail"
+  get "/user_details/:id", to: "user_details#show"
 
-  delete "/listings/:id", to: "listings#destroy"
+  # delete "/listings/:id", to: "listings#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

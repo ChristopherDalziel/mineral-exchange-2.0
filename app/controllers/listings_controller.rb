@@ -1,11 +1,12 @@
 class ListingsController < ApplicationController
   
     # before_action :authenticate_user!
-    # before_action :set_listing, only: [ :show ]
+    before_action :set_listing, only: [ :show ]
     before_action :set_user_listing, only: [ :show, :edit, :update, :destroy ]
 
     def index
       @listings = Listing.all
+      # @listings = current_user.listings
     end
   
     def new
@@ -18,13 +19,7 @@ class ListingsController < ApplicationController
       else
         render :edit
       end
-  
-  
-      # listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
-  
-      # @listing.update(listing_params)
-     
-      # redirect_to listings_path
+
     end
   
     def edit
@@ -33,18 +28,11 @@ class ListingsController < ApplicationController
     def create
       listing_params = params.require(:listing).permit(:user_id, :type_id, :mineral_name, :description, :location, :price, :image)
 
-      @listing = Listing.new(listing_params)
-
-      # Listing user:references type:references mineral_name:string description:text location:text price:integer image:text sold:integer
-  
-      # @listing = current_user.listings.create(listing_params)
-      # @listing.traits << Trait.find(params[:listing][:trait_id])
-      # @listing.save
-  
-      if @listing.save
-        redirect_to @listing
-      else
-        render :new
+      @listing = current_user.listings.create(listing_params)
+        if @listing.save
+          redirect_to listings_path
+        else
+          render :new
       end
   
     end
@@ -57,5 +45,23 @@ class ListingsController < ApplicationController
     def listing_params
       listing_params = params.require(:listing).permit(:user_id, :type_id, :mineral_name, :description, :location, :price, :image)
     end
+
+    private
+
+    def set_listing
+      id = params[:id]
+      @listing = Listing.find(id)
+    end
+  
+    def set_user_listing
+      id = params[:id]
+      @listing = current_user.listings.find_by_id(id)
+  
+      if @listing == nil
+        redirect_to listings_path
+      end
+      
+    end
+  
 
 end

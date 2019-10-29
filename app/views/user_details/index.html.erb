@@ -4,21 +4,10 @@
   <div class="hero-container">
     <div class="hero-box">
 
-      <div>
-      
-          Name: <%= @user_detail %>
-          Email Address: <%= current_user.email %> <br>
-          Account Type: <% if current_user.is_seller == true %>
-                              <%= "Seller" %>
-                                <% else %>
-                                  <%= "Buyer"  %>
-                              <% end %>
+      <%= render 'display' %>
        
       </div>
 
     </div>
   </div>
 </div>
-
-
-  

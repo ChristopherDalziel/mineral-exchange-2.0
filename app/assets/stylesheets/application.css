@@ -99,7 +99,7 @@ font-family: 'Raleway', sans-serif; */
 }
 
 /* Buttons on log-in / sign up etc.. can't seem to split the input fields from the button */
-input {
+/* input {
   cursor: pointer;
   width: 90%;
   border: none;
@@ -108,7 +108,7 @@ input {
   margin: 0 0 5px;
   padding: 10px;
   font-size: 15px;
-}
+} */
 
 
 
