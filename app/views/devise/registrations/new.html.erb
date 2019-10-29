@@ -41,14 +41,16 @@
           <%= f.label :is_seller, "Seller", :value => true %>
           <%= f.radio_button :is_seller, true %>
           <%= f.label :is_seller, "Buyer", :value => false %>
-          <%= f.radio_button :is_seller, false %>
+          <%= f.radio_button :is_seller, false, required: 'required' %>
         </div><br>
 
-      
+        <%= link_to 'text', path %>
 
-          <div class="actions">
-            <%= f.submit "Sign up" %>
-          </div>
+      
+          
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
         <% end %>
       </div>
     </div>

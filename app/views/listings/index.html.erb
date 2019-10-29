@@ -1,15 +1,11 @@
 <div class="container">
   <%= render '/pages/nav' %>
 
-   <% if user_signed_in? %>
+   <% if user_signed_in? && current_user.is_seller == true %>
        <%= link_to 'Create New Listing', new_listing_path %>
           <% else %>
-            <%= link_to 'Login To Make A New Listing', new_user_session_path %>
+            <%= link_to 'Login as a seller to make a new listing', new_user_session_path %>
     <% end %>
-
-
-
-
 
    <!-- (:user_id, :type_id :mineral_name, :description, :location, :price, :image) -->
 
