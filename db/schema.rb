@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_035049) do
+ActiveRecord::Schema.define(version: 2019_10_28_225525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 2019_10_28_035049) do
     t.index ["listing_id"], name: "index_questions_on_listing_id"
   end
 
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "types", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -55,11 +61,17 @@ ActiveRecord::Schema.define(version: 2019_10_28_035049) do
 
   create_table "user_details", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "phone"
-    t.string "name"
-    t.text "address"
+    t.integer "contact_number"
+    t.string "first_name"
+    t.string "lastname"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "suburb"
+    t.bigint "state_id"
+    t.integer "postcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["state_id"], name: "index_user_details_on_state_id"
     t.index ["user_id"], name: "index_user_details_on_user_id"
   end
 
@@ -80,5 +92,6 @@ ActiveRecord::Schema.define(version: 2019_10_28_035049) do
   add_foreign_key "listings", "types"
   add_foreign_key "listings", "users"
   add_foreign_key "questions", "listings"
+  add_foreign_key "user_details", "states"
   add_foreign_key "user_details", "users"
 end

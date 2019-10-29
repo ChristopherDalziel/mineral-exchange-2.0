@@ -2,12 +2,22 @@
 
 one:
   user: one
-  phone: 1
-  name: MyString
-  address: MyText
+  contact_number: 1
+  first_name: MyString
+  lastname: MyString
+  address_line_1: MyString
+  address_line_2: MyString
+  suburb: MyString
+  state: one
+  postcode: 1
 
 two:
   user: two
-  phone: 1
-  name: MyString
-  address: MyText
+  contact_number: 1
+  first_name: MyString
+  lastname: MyString
+  address_line_1: MyString
+  address_line_2: MyString
+  suburb: MyString
+  state: two
+  postcode: 1

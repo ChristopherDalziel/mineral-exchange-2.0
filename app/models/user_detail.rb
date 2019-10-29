@@ -1,4 +1,5 @@
 class UserDetail < ApplicationRecord
   belongs_to :user
-  has_many :users
+  belongs_to :state
+  has_many :states
 end

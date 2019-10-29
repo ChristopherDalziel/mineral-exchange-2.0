@@ -1,1 +1,24 @@
-test bitch
+<div class="container">
+  <%= render '/pages/nav' %>
+
+  <div class="hero-container">
+    <div class="hero-box">
+
+      <div>
+        <% @user_detail.each do |userdetail| %>
+          Name: <%= userdetail.first_name %>
+          Email Address: <%= current_user.email %> <br>
+          Account Type: <% if current_user.is_seller == true %>
+                              <%= "Seller" %>
+                                <% else %>
+                                  <%= "Buyer"  %>
+                              <% end %>
+          <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  

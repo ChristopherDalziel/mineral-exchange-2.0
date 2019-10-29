@@ -3,10 +3,14 @@
 
   <div class="hero-container">
     <div class="hero-box">
-       <p>
+       <br><p>
         Email Address: <%= current_user.email %> <br>
-        Buyer or Seller?: <%= current_user.is_seller %>
-        </p>
+        Account Type: <% if current_user.is_seller == true %>
+                            <%= "Seller" %>
+                              <% else %>
+                                <%= "Buyer"  %>
+                            <% end %>
+        </p> <br>
     <%= render 'form', user_detail: @user_detail %>
     </div>
   </div>

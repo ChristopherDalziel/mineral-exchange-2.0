@@ -1,18 +1,39 @@
 <%= form_with model: user_detail, local: true do |form| %>
 
 <section>
+        <div>
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name %>
+        </div>
+        <div>
+            <%= form.label :lastname %>
+            <%= form.text_field :lastname %>
+        </div>
+        <div>
+            <%= form.label :contact_number %>
+            <%= form.number_field :contact_number %>
+        </div>
+        <div>
+            <%= form.label :address_line_1 %>
+            <%= form.text_field :address_line_1 %>
+        </div>
          <div>
-            <%= form.label :phone %>
-            <%= form.number_field :phone %>
+            <%= form.label :address_line_2 %>
+            <%= form.text_field :address_line_2 %>
         </div>
         <div>
-            <%= form.label :name %>
-            <%= form.text_field :name %>
+            <%= form.label :suburb %>
+            <%= form.text_field :suburb %>
         </div>
         <div>
-            <%= form.label :address %>
-            <%= form.text_field :address %>
+            <%= form.label :state %>
+            <%= form.select :state, options_for_select( State.all.collect {|u| [u.name, u.id]}, :selected => user_detail.state_id) %>
         </div>
+        <div>
+            <%= form.label :postcode %>
+            <%= form.text_field :postcode %>
+        </div>
+        <br>
 
         <div class="submit-button">
             <%= form.submit %>
