@@ -9,6 +9,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   private
+
+  def
   
   def after_sign_up_path_for(resource)
     new_user_detail_path
@@ -20,7 +22,5 @@ class RegistrationsController < Devise::RegistrationsController
   #   elsif resource.role == "supplier"
   #    redirect_to supplier_dashboard_path
   #   end
-
-  end
 
 end
