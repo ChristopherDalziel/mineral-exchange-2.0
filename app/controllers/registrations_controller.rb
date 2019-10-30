@@ -14,4 +14,13 @@ class RegistrationsController < Devise::RegistrationsController
     new_user_detail_path
   end 
 
+  # def after_sign_in_path_for(resource)
+  #   if resource.role == "customer"
+  #     redirect_to customer_dashboard_path
+  #   elsif resource.role == "supplier"
+  #    redirect_to supplier_dashboard_path
+  #   end
+
+  end
+
 end

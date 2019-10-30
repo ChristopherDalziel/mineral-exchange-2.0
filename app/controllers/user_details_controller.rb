@@ -1,6 +1,6 @@
 class UserDetailsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_user_user_detail, only: [ :show, :edit, :update, :destroy ]
+  # before_action :authenticate_user!
+  # before_action :set_user_user_detail, only: [ :show, :edit, :update, :destroy ]
 
   def index
     # @user_detail = UserDetail.all

@@ -62,6 +62,7 @@
           Description: <%= listing.description %><br>
           Location(Found):<%= listing.location %><br>
           Price: <%= listing.price %><br>
+          <%= link_to 'Show', listing_path(listing) %>
           </div>
        
         <% end %>
