@@ -15,7 +15,7 @@
     
      (:user_id, :type_id :mineral_name, :description, :location, :price, :image) -->
 
-  <table>
+<!--  <table>
       <thead>
         <tr>
           <th>Id:</th>
@@ -49,8 +49,25 @@
           </tr
         <% end %>
       </tbody>
-    </table>
+    </table> -->
 
-  <%= render '/pages/footer' %>
-
+  <div class="grid-container">
+    <% @listings.each do |listing| %>
+        <div class="grid-item"> 
+          <%= image_tag listing.picture if listing.picture.attached? %><br>
+          <%= listing.id %><br>
+          Seller: <%= listing.user.email%><br>
+          Type: <%= listing.type.name %><br>
+          Name: <%= listing.mineral_name %><br>
+          Description: <%= listing.description %><br>
+          Location(Found):<%= listing.location %><br>
+          Price: <%= listing.price %><br>
+          </div>
+       
+        <% end %>
+    </div>
+    <%= render '/pages/footer' %>
+  </div>
+  
+ 
 </div>

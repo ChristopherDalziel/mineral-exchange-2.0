@@ -1,3 +1,19 @@
-<p>
-  <%= image_tag @listing.picture if @listing.picture.attached? %>
-</p>
+<div class="container">
+  <%= render '/pages/nav' %>
+
+  <div class="hero-container">
+    <div class="hero-box-show"><br>
+      <p>
+        <%= image_tag @listing.picture if @listing.picture.attached? %>
+      </p>
+      <strong>Mineral:</strong> <%= @listing.type.name %><br>
+      <strong>Description:</strong> <%= @listing.description %><br>
+      <strong>Location:</strong> <%= @listing.location %><br>
+      <strong>Price:</strong> <%= @listing.price %>
+    </div>
+  </div>
+  <%= render '/pages/footer' %>
+</div>
+
+<!-- (:user_id, :type_id :mineral_name, :description, :location, :price) -->
+

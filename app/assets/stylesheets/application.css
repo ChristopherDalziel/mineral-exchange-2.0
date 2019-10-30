@@ -154,3 +154,46 @@ tr:hover {background-color:lightgray;}
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
 }
+
+/* image on show page */
+p img {
+  height: 250px;
+}
+
+.hero-box-show {
+  text-align: center;
+  margin-top: 5vh;
+  height: 75vh;
+  width: 80vw;
+  background-color: white;
+  border: solid black 3px;
+  box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
+}
+
+
+.grid-container {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  overflow-x: scroll;
+  height: 640px;
+  width: 100vw;
+  margin: none;
+  padding: none;
+}
+
+.grid-item {
+  height: 200px;
+  width: 300px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.grid-item img {
+  height: 100px;
+  /* width: 100px; */
+}
