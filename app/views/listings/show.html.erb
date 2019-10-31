@@ -9,8 +9,22 @@
       <strong>Mineral:</strong> <%= @listing.type.name %><br>
       <strong>Description:</strong> <%= @listing.description %><br>
       <strong>Location:</strong> <%= @listing.location %><br>
-      <strong>Price:</strong> <%= @listing.price %>
+      <strong>Price:</strong> <%= @listing.price %><br><br>
+
+      <div class="q-box">
+        <%= link_to 'Ask a question', new_question_path(@listing) %> <br>
+
+          <% @listing.questions.each do |question| %>
+            <strong>Subject: <%= question.subject %></strong> <br><br>
+            Question:<%= question.body %><br>
+          <% end %>
+        
+      </div>
     </div>
+           
+
+  
+
   </div>
   <%= render '/pages/footer' %>
 </div>

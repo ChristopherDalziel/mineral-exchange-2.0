@@ -25,7 +25,13 @@ Rails.application.routes.draw do
   get "/user_details/:id/edit", to: "user_details#edit", as: "edit_user_detail"
   get "/user_details/:id", to: "user_details#show"
 
-  get "/question", to: "questions#index", as: "question"
+  get "/questions/:listing_id", to: "questions#index", as: "question"
+  post "/questions", to: "questions#create"
+  get "/questions/new/:listing_id", to: "questions#new", as: "new_question"
+  put "/questions/:id", to: "questions#update"
+  patch "/questions/:id", to: "questions#update"
+  delete "/questions/:id", to: "questions#destroy"
+  get "questions/:id/edit", to: "questions#edit", as: "edit_question"
 
   # delete "/listings/:id", to: "listings#destroy"
 

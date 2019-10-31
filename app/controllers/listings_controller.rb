@@ -29,8 +29,6 @@ class ListingsController < ApplicationController
     end
   
     def create
-      listing_params = params.require(:listing).permit(:user_id, :type_id, :mineral_name, :description, :location, :price, :picture)
-
       @listing = current_user.listings.create(listing_params)
         if @listing.save
           redirect_to listings_path
@@ -44,9 +42,8 @@ class ListingsController < ApplicationController
       @listing.destroy
       redirect_to listings_path
     end
-  
-    def listing_params
-      listing_params = params.require(:listing).permit(:user_id, :type_id, :mineral_name, :description, :location, :price, :picture)
+
+    def show
     end
 
     private
@@ -64,6 +61,10 @@ class ListingsController < ApplicationController
         redirect_to listings_path
       end
       
+    end
+
+    def listing_params
+      listing_params = params.require(:listing).permit(:user_id, :type_id, :mineral_name, :description, :location, :price, :picture)
     end
   
 

@@ -216,3 +216,10 @@ p img {
   /* width: 100px; */
 }
 
+.q-box {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 60%;
+  overflow-x: hidden;
+}
+
