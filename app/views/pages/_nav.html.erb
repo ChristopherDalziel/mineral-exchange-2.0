@@ -1,10 +1,9 @@
 <div class="nav-c">
   <nav>
-    <ul>
-      <li><% if user_signed_in? %>
+      <!-- <li><% if user_signed_in? %>
           <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
             <% else %>
-              <%= link_to 'Login', new_user_session_path %>
+             <%= link_to 'Login', new_user_session_path %>
           <% end %></li>
       <li><% if user_signed_in? %>
             <%= link_to 'Profile', user_details_path %>
@@ -12,8 +11,30 @@
                 <%= link_to 'Profile', new_user_session_path %></li>
             <% end %>
       <li><%= link_to 'Homepage', root_path %></li>
-      <li><%= link_to 'Listings', listings_path %></li>
-      <li>Contact</li>
-    </ul>
+      <li> <% if user_signed_in?  %>
+            <%= link_to 'Your Listings', listings_path %></li>
+              <% else %>
+                <%= link_to 'Listings', listings_path %>
+            <% end %>
+      <li>Contact</li> -->
+
+      <% if user_signed_in? %>
+      <ul>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'Profile', user_details_path %></li>
+        <li><%= link_to 'Your Listings', listings_path %></li>
+        <li><%= link_to 'New Listing', new_listing_path %></li>
+        <li><%= link_to 'Homepage', root_path %></li>
+        <li><%= link_to 'Contact us' %></li></ul<>
+          <% else %>
+          <ul>
+            <li><%= link_to 'Login', new_user_session_path %></li>
+            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Homepage', root_path %></li>
+            <li><%= link_to 'Listings', listings_path %></li>
+            <li><%= link_to 'Contact Us' %></li>
+            </li>
+        <% end %>
+      </ul>
   </nav>
 </div>

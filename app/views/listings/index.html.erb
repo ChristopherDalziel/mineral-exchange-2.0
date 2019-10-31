@@ -1,11 +1,11 @@
 <div class="container">
   <%= render '/pages/nav' %>
 
-   <% if user_signed_in? && current_user.is_seller == true %>
+   <!-- <% if user_signed_in? && current_user.is_seller == true %>
        <%= link_to 'Create New Listing', new_listing_path %>
           <% else %>
             <%= link_to 'Login as a seller to make a new listing', new_user_session_path %>
-    <% end %>
+    <% end %> -->
 
    <!--   <% if user_signed_in? && current_user.is_seller == true %>
        <%= button_to 'Create New Listing', new_listing_path %>

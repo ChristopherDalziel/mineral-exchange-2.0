@@ -27,6 +27,15 @@ font-family: 'Raleway', sans-serif; */
   font-family: 'Raleway', sans-serif;
 }
 
+/* Removes devise notices */
+.notice {
+  display: none;
+}
+
+.alert {
+  display: none;
+}
+
 h1 {
 font-family: 'Montserrat Subrayada', sans-serif;
 }
@@ -139,7 +148,16 @@ th, td {
 tr:nth-child(even) {background-color: #f2f2f2;}
 tr:hover {background-color:lightgray;}
 
-.test form input[value="Login"],[value="Logout"]:hover {
+/* Login and Logout wouldn't work together on one line */
+.test form input[value="Logout"]:hover {
+  background-color: #DC3F5C;
+  color: white;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.test form input[value="Login"]:hover {
   background-color: #DC3F5C;
   color: white;
   -webkit-transition: background 0.3s ease-in-out;
@@ -177,14 +195,14 @@ p img {
   display: grid;
   grid-template-columns: auto auto auto;
   overflow-x: scroll;
-  height: 640px;
+  height: 88%;
   width: 100vw;
-  margin: none;
+  margin-top: 5px;
   padding: none;
 }
 
 .grid-item {
-  height: 200px;
+  height: 210px;
   width: 300px;
   margin-bottom: 5px;
   margin-right: 5px;
@@ -197,3 +215,4 @@ p img {
   height: 100px;
   /* width: 100px; */
 }
+
