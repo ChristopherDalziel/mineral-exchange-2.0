@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get "/user_details/:id/edit", to: "user_details#edit", as: "edit_user_detail"
   get "/user_details/:id", to: "user_details#show"
 
+  get "/question", to: "questions#index", as: "question"
+
   # delete "/listings/:id", to: "listings#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
