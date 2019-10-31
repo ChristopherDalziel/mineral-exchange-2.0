@@ -4,9 +4,12 @@ class ListingsController < ApplicationController
     before_action :set_listing, only: [ :show ]
     before_action :set_user_listing, only: [ :show, :edit, :update, :destroy ]
 
-    def index
+    def index_buyer
       @listings = Listing.all
-      # @listings = current_user.listings
+    end
+
+    def index_seller
+      @listings = current_user.listings
     end
   
     def new

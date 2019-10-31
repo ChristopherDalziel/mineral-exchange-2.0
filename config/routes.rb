@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   get "/", to: "pages#home", as: "root"
 
-  get "/listings", to: "listings#index", as: "listings"
+  get "/listings", to: "listings#index_buyer", as: "listings_buyer"
+  get "/seller_listings", to: "listings#index_seller", as: "listings_seller"
   post "/listings", to: "listings#create"
   get "/listings/new", to: "listings#new", as: "new_listing"
   get "/listings/:id", to: "listings#show", as: "listing"

@@ -22,7 +22,7 @@
       <ul>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <li><%= link_to 'Profile', user_details_path %></li>
-        <li><%= link_to 'Your Listings', listings_path %></li>
+        <li><%= link_to 'Your Listings', listings_seller_path %></li>
         <li><%= link_to 'New Listing', new_listing_path %></li>
         <li><%= link_to 'Homepage', root_path %></li>
         <li><%= link_to 'Contact us' %></li></ul<>
@@ -36,5 +36,6 @@
             </li>
         <% end %>
       </ul>
+      
   </nav>
 </div>
