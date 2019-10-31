@@ -1,0 +1,17 @@
+<%= form_with model: answer, local: true do |form| %>
+
+  <section>
+    <div>
+      <%= form.hidden_field :question_id, value: params[:question_id] %>
+    </div> 
+    <div>
+        <%= form.label :body %>
+        <%= form.text_field :body %>
+    </div>
+    <br>
+
+    <div class="submit-button">
+        <%= form.submit %>
+    </div>
+  </section>
+<% end %>

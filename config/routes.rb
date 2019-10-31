@@ -33,6 +33,14 @@ Rails.application.routes.draw do
   delete "/questions/:id", to: "questions#destroy"
   get "questions/:id/edit", to: "questions#edit", as: "edit_question"
 
+  get "/answers/:question_id", to: "answers#index", as: "answer"
+  post "/answers", to: "answers#create"
+  get "/answers/new/:question_id", to: "answers#new", as: "new_answer"
+  put "/answers/:id", to: "answers#update"
+  patch "/answers/:id", to: "answers#update"
+  delete "/answers/:id", to: "answers#destroy"
+  get "answers/:id/edit", to: "answers#edit", as: "edit_answer"
+
   # delete "/listings/:id", to: "listings#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

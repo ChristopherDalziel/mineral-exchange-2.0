@@ -17,16 +17,15 @@
           <% @listing.questions.each do |question| %>
             <strong>Subject: <%= question.subject %></strong> <br><br>
             Question:<%= question.body %><br>
-          <% end %>
-        
+            <%= link_to 'Answer', new_answer_path(question) %><br><br>
+              <%= question.body %>
+          <% end %> 
+
+            <!-- If I move the answer code out of the above div it crashes -->
+         
       </div>
     </div>
            
-
-  
-
   </div>
   <%= render '/pages/footer' %>
 </div>
-
-<!-- (:user_id, :type_id :mineral_name, :description, :location, :price) -->

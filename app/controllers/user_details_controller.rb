@@ -54,8 +54,7 @@ class UserDetailsController < ApplicationController
   #   #   if @listing.deposit == nil
   #   #     @listing.deposit = 0 #sometimes stripe doesn't allow a payment of zero? 
   #   #   end
-    end
-
+  end
 
   def user_detail_params
     user_detail_params = params.require(:user_detail).permit(:user_id, :contact_number, :first_name, :lastname, :address_line_1, :address_line_2, :suburb, :state_id, :postcode)
