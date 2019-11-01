@@ -44,6 +44,8 @@ class ListingsController < ApplicationController
     end
 
     def show
+      @question = Question.new
+      # @question.listing_id = @listing.id
     end
 
     private

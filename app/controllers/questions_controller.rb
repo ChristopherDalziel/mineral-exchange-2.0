@@ -9,8 +9,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question_params = params.require(:question).permit(:subject, :body, :listing_id)
-
       @question = Question.new(question_params)
         if @question.save
           redirect_to listings_path
@@ -33,6 +31,5 @@ class QuestionsController < ApplicationController
   def question_params
     question_params = params.require(:question).permit(:subject, :body, :listing_id)
   end
-
 
 end

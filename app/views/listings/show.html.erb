@@ -6,6 +6,7 @@
       <p>
         <%= image_tag @listing.picture if @listing.picture.attached? %>
       </p>
+
       <strong>Mineral:</strong> <%= @listing.type.name %><br>
       <strong>Description:</strong> <%= @listing.description %><br>
       <strong>Location:</strong> <%= @listing.location %><br>

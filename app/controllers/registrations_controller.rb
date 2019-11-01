@@ -19,14 +19,11 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def after_sign_up_path_for(resource)
-    root_path
+    if current_user.is_seller == true
+      root_path
+    else
+      listings_path
+    end
   end 
-
-  # def after_sign_in_path_for(resource)
-  #   if resource.role == "customer"
-  #     redirect_to customer_dashboard_path
-  #   elsif resource.role == "supplier"
-  #    redirect_to supplier_dashboard_path
-  #   end
 
 end

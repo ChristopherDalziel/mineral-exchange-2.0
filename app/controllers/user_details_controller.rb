@@ -47,13 +47,6 @@ class UserDetailsController < ApplicationController
     id = params[:id]
     
     @user_detail = current_user.user_detail
-
-  #   # if @listing == nil
-  #   #   redirect_to listings_path
-  #   # else
-  #   #   if @listing.deposit == nil
-  #   #     @listing.deposit = 0 #sometimes stripe doesn't allow a payment of zero? 
-  #   #   end
   end
 
   def user_detail_params

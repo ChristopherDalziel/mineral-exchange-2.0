@@ -1,32 +1,22 @@
 <div class="nav-c">
   <nav>
-      <!-- <li><% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-            <% else %>
-             <%= link_to 'Login', new_user_session_path %>
-          <% end %></li>
-      <li><% if user_signed_in? %>
-            <%= link_to 'Profile', user_details_path %>
-              <% else %>
-                <%= link_to 'Profile', new_user_session_path %></li>
-            <% end %>
-      <li><%= link_to 'Homepage', root_path %></li>
-      <li> <% if user_signed_in?  %>
-            <%= link_to 'Your Listings', listings_path %></li>
-              <% else %>
-                <%= link_to 'Listings', listings_path %>
-            <% end %>
-      <li>Contact</li> -->
-
-      <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.is_seller == true %>
       <ul>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <li><%= link_to 'Profile', user_details_path %></li>
         <li><%= link_to 'Your Listings', listings_seller_path %></li>
         <li><%= link_to 'New Listing', new_listing_path %></li>
         <li><%= link_to 'Homepage', root_path %></li>
-        <li><%= link_to 'Contact us' %></li></ul<>
-          <% else %>
+        <li><%= link_to 'Contact us' %></li></ul>
+    <% elsif user_signed_in? && current_user.is_seller == false %>
+            <ul>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to 'Profile', user_details_path %></li>
+              <li><%= link_to 'Listings', listings_path %></li>
+              <li><%= link_to 'Homepage', root_path %></li>
+              <li><%= link_to 'Contact us' %></li>
+            </ul>
+      <% else %>
           <ul>
             <li><%= link_to 'Login', new_user_session_path %></li>
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
@@ -34,8 +24,7 @@
             <li><%= link_to 'Listings', listings_path %></li>
             <li><%= link_to 'Contact Us' %></li>
             </li>
-        <% end %>
+      <% end %>
       </ul>
-      
   </nav>
 </div>
