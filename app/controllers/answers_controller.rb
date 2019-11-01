@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
       # @answer = current_user.answers.create(answer_params)
       @answer = Answer.new(answer_params)
         if @answer.save
-          redirect_to listings_path
+          redirect_to questions_path
         else
           render :new
       end
