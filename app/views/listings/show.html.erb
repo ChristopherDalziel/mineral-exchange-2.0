@@ -15,13 +15,13 @@
         <%= link_to 'Ask a question', new_question_path(@listing) %> <br>
 
           <% @listing.questions.each do |question| %>
-            <strong>Subject: <%= question.subject %></strong> <br><br>
-            Question:<%= question.body %><br>
-            <%= link_to 'Answer', new_answer_path(question) %><br><br>
-              <%= question.body %>
+            <br><strong>Subject: <%= question.subject %></strong> <br><br>
+            Question:<%= question.body %><br><br>
+            <%= link_to 'Answer', new_answer_path(question) %><br>
+              <% question.answers.each do |answer| %>
+               Answer: <%= answer.body %><br>
+             <% end %>
           <% end %> 
-
-            <!-- If I move the answer code out of the above div it crashes -->
          
       </div>
     </div>
