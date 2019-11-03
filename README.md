@@ -6,6 +6,9 @@ For this assignment I'm designing a web marketplace designed for sellers and col
 ### Why is this a problem that needs solving? 
 Rock sellers / collectors need JUSTICE
 
+# ERD
+![ERD Chart](/app/assets/images/md_images/ead.jpeg)
+
 # Epic/Stories
 ![Epic with Stories](/app/assets/images/md_images/stories.png)
 

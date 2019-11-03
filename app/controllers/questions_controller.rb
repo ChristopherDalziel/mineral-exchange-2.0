@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
 
-      before_action :authenticate_user!
-      before_action :set_question, only: [ :show ]
-      before_action :set_user_question, only: [ :edit, :update, :destroy ]
+      # before_action :authenticate_user!
+      # before_action :set_question, only: [ :show, :create ]
+      # before_action :set_user_question, only: [ :edit, :update, :destroy ]
 
   def index
     @questions = Question.all
@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
 
   def create
       # @question = Question.new(question_params)
-      @question = current_user.questions.create(question_params)
+      @question = current_user.question.create(question_params)
         if @question.save
           redirect_to listings_path
         else
@@ -39,12 +39,12 @@ class QuestionsController < ApplicationController
 
   def set_question
     id = params[:id]
-    @question = Question  .find(id)
+    @question = Question.find(id)
   end
 
   def set_user_question
     id = params[:id]
-    @question = question.find_by_id(id)
+    @question = questions.find_by_id(id)
 
     if @question == nil
       redirect_to listings_path

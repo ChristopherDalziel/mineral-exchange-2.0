@@ -12,26 +12,36 @@
       <strong>Location:</strong> <%= @listing.location %><br>
       <strong>Price:</strong> <%= @listing.price %><br><br>
 
-      <div class="q-box">
-        <%= link_to 'Ask a question', new_question_path(@listing) %> <br>
 
+      <%= link_to 'Ask a question', new_question_path(@listing) %> <br>
+      <table>
+        <thead>
+          <tr>
+            <th>Question:</th>
+            <th>Answer:</th>
+
+            <th colspan="15"></th>
+          </tr>
+        </thead>
+        <tbody>
           <% @listing.questions.each do |question| %>
-            <br><strong>Subject: <%= question.subject %></strong> <br><br>
-            Question:<%= question.body %><br><br>
-               
-                <td><%= link_to 'Edit', edit_listing_path(@listing) %></td>
-                <td><%= link_to 'Show', listing_path(@listing) %></td>
-                <td><%= link_to 'Destroy', question_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            
-            <%= link_to 'Answer', new_answer_path(question) %><br>
-              <% question.answers.each do |answer| %>
-               Answer: <%= answer.body %><br>
-             <% end %>
-          <% end %> 
-         
+          <tr>
+            <td><%= question.subject %>
+              <%= question.body %>
+
+            <% question.answers.each do |answer| %>
+              <td><%= answer.body %><br>
+            <% end %>
+               <% if current_user == @listing.user %>
+              <td><%= link_to 'Answer', new_answer_path(question) %></td>
+              <td><%= link_to 'Edit', edit_listing_path(@listing) %></td>
+              <td><%= link_to 'Destroy', question_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% else %>
+              <% end %>
+            <% end %>
+              </table>
+        </div>
       </div>
-    </div>
-           
-  </div>
-  <%= render '/pages/footer' %>
+   <%= render '/pages/footer' %>
+   </div>
 </div>

@@ -1,66 +1,16 @@
 <div class="container">
   <%= render '/pages/nav' %>
 
-   <!-- <% if user_signed_in? && current_user.is_seller == true %>
-       <%= link_to 'Create New Listing', new_listing_path %>
-          <% else %>
-            <%= link_to 'Login as a seller to make a new listing', new_user_session_path %>
-    <% end %> -->
-
-   <!--   <% if user_signed_in? && current_user.is_seller == true %>
-       <%= button_to 'Create New Listing', new_listing_path %>
-          <% else %>
-            <%= button_to 'Login as a seller to make a new listing', new_user_session_path %>
-    <% end %>
-    
-     (:user_id, :type_id :mineral_name, :description, :location, :price, :image) -->
-
-   <!-- <table>
-      <thead>
-        <tr>
-          <th>Id:</th>
-          <th>User Id:</th>
-          <th>Type:</th>
-          <th>Mineral:</th>
-          <th>Description:</th>
-          <th>Location:</th>
-          <th>Price:</th>
-          
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @listings.each do |listing| %>
-          <tr>
-            <td><%= listing.id %></td>
-            <td><%= listing.user.email%>
-            <td><%= listing.type.name %></td>
-            <td><%= listing.mineral_name %></td>
-            <td><%= listing.description %></td>
-            <td><%= listing.location %></td>
-            <td><%= listing.price %></td>
-            
-            <% if current_user == listing.user %>
-              <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-              <td><%= link_to 'Show', listing_path(listing) %></td>
-              <td><%= link_to 'Destroy', listing_path(listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
-              
-          </tr
-        <% end %>
-      </tbody>
-    </table> -->
-
   <div class="grid-container">
     <% @listings.each do |listing| %>
         <div class="grid-item"> 
           <%= image_tag listing.picture if listing.picture.attached? %><br>
-          <%= listing.id %><br>
-          Seller: <%= listing.user.email%><br>
+          
+       
           Type: <%= listing.type.name %><br>
           Name: <%= listing.mineral_name %><br>
-          Description: <%= listing.description %><br>
-          Location(Found):<%= listing.location %><br>
+  
+        
           Price: <%= listing.price %><br>
           <%= link_to 'Show', listing_path(listing) %>
           </div>

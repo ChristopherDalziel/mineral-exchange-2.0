@@ -66,7 +66,6 @@ font-family: 'Montserrat Subrayada', sans-serif;
   background-color: white;
   border: solid black 3px;
   box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
-  
 }
 
 .hero-box-two {
@@ -77,6 +76,7 @@ font-family: 'Montserrat Subrayada', sans-serif;
   background-color: white;
   border: solid black 3px;
   box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
+  overflow-x: scroll;
   
 }
 
@@ -178,16 +178,6 @@ p img {
   height: 250px;
 }
 
-.hero-box-show {
-  text-align: center;
-  margin-top: 5vh;
-  height: 75vh;
-  width: 80vw;
-  background-color: white;
-  border: solid black 3px;
-  box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
-}
-
 
 .grid-container {
   align-items: center;
@@ -209,17 +199,22 @@ p img {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.8);
   text-align: center;
+  box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
 }
 
 .grid-item img {
+  margin-top: 10px;
   height: 100px;
-  /* width: 100px; */
 }
 
-.q-box {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  height: 60%;
-  overflow-x: hidden;
+.hero-box-show {
+  text-align: center;
+  margin-top: 5vh;
+  height: 75vh;
+  width: 80vw;
+  background-color: white;
+  border: solid black 3px;
+  box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
+  overflow-x: scroll;
 }
 
