@@ -1,0 +1,24 @@
+/* Login and Logout wouldn't work together on one line */
+.test form input[value="Logout"]:hover {
+  background-color: #DC3F5C;
+  color: white;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.test form input[value="Login"]:hover {
+  background-color: #DC3F5C;
+  color: white;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.test form input[value="Sign up"]:hover {
+  background-color: #4E7ABC;
+  color: white;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
