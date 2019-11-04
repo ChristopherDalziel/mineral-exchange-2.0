@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
 
   def create
       # @question = Question.new(question_params)
+      raise
       @question = current_user.question.create(question_params)
         if @question.save
           redirect_to listings_path
