@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+types = Type.create([{ name: "Ignous" }, {name: "Sedimentary"}, { name: "Metamorphic"}, {name: "Obsidian"},{ name: "Limestone"}, {name: "Marble"}, { name: "Sandstone"}, {name: "Gneiss"},{ name: "Quartzite"}, {name: "Basalt"}, { name: "Granite"}, {name: "Slate"},{ name: "Schist"}, {name: "Shale"},{ name: "Conglomrate"}, {name: "Rhyolite"},{ name: "Pumice"}, {name: "Chert"}, { name: "Breccia"}, {name: "Andesite"}, { name: "Amethyst"}, {name: "Tigers Eye"}, { name: "Ruby"}, {name: "Emerald"}, { name: "Sapphire"}, {name: "Moonstone"}, { name: "Native Elements (Mineral)"}, {name: "Oxide (Mineral)"}, { name: "Silicates (Mineral)"}, {name: "Sulfides (Mineral)"}, { name: "Sulfates (Mineral)"}, {name: "Carbonates (Mineral)"}, { name: "Phosphates (Mineral)"}])
+
+states = State.create([{ name: "QLD"}, {name: "NT"}, { name: "SA"}, {name: "WA"}, { name: "ACT"}, {name: "TAS"}, { name: "NSW"}, {name: "VIC"}])
+
+# { name: }, {name: },

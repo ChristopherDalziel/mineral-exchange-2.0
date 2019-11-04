@@ -48,8 +48,6 @@ font-family: 'Montserrat Subrayada', sans-serif;
   background-image: url(Mineral-Background.png);
   background-position: center;
   background-size: 106%;
-  /* background-color: black; */
-  
 }
  
 .hero-container {
@@ -98,7 +96,6 @@ font-family: 'Montserrat Subrayada', sans-serif;
   background-size: 175px;
   background-position: center;
 }
-
 
 .button_to [type="submit"] { 
   cursor: pointer;
@@ -196,7 +193,6 @@ tr:hover {background-color:lightgray;}
 p img {
   height: 250px;
 }
-
 
 .grid-container {
   align-items: center;
