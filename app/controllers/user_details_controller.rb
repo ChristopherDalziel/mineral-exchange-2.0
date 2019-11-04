@@ -24,9 +24,7 @@ class UserDetailsController < ApplicationController
   
     
   def create
-    user_detail_params = params.require(:user_detail).permit( :user_id, :contact_number, :first_name, :lastname, :address_line_1, :address_line_2, :suburb, :state_id, :postcode)
     @user_detail = UserDetail.new(user_detail_params)
-
     @user_detail.user_id = current_user.id
     if @user_detail.save
       redirect_to user_details_path
