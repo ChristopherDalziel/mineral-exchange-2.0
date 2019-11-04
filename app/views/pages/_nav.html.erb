@@ -14,7 +14,7 @@
               <li><%= link_to 'Profile', user_details_path %></li>
               <li><%= link_to 'Listings', listings_path %></li>
               <li><%= link_to 'Homepage', root_path %></li>
-              <li><%= link_to 'Contact us' %></li>
+              <li><%= link_to 'Contact us', contact_us_path %></li>
             </ul>
       <% else %>
           <ul>
@@ -22,7 +22,7 @@
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
             <li><%= link_to 'Homepage', root_path %></li>
             <li><%= link_to 'Listings', listings_path %></li>
-            <li><%= link_to 'Contact Us' %></li>
+            <li><%= link_to 'Contact Us', contact_us_path %></li>
             </li>
       <% end %>
       </ul>

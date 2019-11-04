@@ -1,0 +1,83 @@
+.container-contact {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  height: 80%;
+}
+
+/* Contact form sizing relative */
+#contact {
+  align-self: center;
+  height: 100%;
+  width: 80%;
+}
+
+/* Page heading location and colour */
+form h1 {
+  text-align: center;
+  color: black;
+}
+
+/* When inputting into fieldsets have a bottom border and it's colour */
+#contact fieldset input:focus {
+  outline: 0;
+  border-bottom: 1px solid #F26F87;
+}
+
+/* When inputting into the textarea field border entire box and its colour */
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #F26F87;
+}
+
+/* Spacing between input fields */
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+}
+
+/* Remove borders */
+input {
+  border: none;
+}
+
+#contact textarea {
+  border: none;
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+/* Input fields background colour, size, and padding between */
+#contact input[type="text"],
+#contact input[type="email-2"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  margin: 0 0 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* Button colour, sizing */
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: black;
+  color: white;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+/* On button hover ease in new/out new colour */
+#contact button[type="submit"]:hover {
+  background: #8FC856;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
