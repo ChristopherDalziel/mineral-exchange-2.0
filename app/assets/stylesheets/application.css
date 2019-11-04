@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- */
 
  /* Fonts import */
   @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Raleway&display=swap');
@@ -46,7 +45,7 @@ font-family: 'Montserrat Subrayada', sans-serif;
   min-height: 100vh;
   height: 100vh;
   width: 100vw;
-  background-image: url(/assets/Mineral-Background);
+  background-image: url(/assets/Mineral-Background.png);
   background-position: center;
   background-size: 106%;
   /* background-color: black; */
@@ -126,6 +125,24 @@ font-family: 'Montserrat Subrayada', sans-serif;
 
 /* Table */
 
+table.qa {
+  border: none;
+}
+
+td.qa {
+  padding: 5px;
+  text-align: left;
+  border: none;
+}
+
+th.qa {
+  border-bottom: black 1px dotted;
+}
+
+tr.qa {
+  border: none;
+}
+
 table {
   /* height: 80%; */
   width: 100%;
@@ -147,6 +164,8 @@ th, td {
 
 tr:nth-child(even) {background-color: #f2f2f2;}
 tr:hover {background-color:lightgray;}
+
+
 
 /* Login and Logout wouldn't work together on one line */
 .test form input[value="Logout"]:hover {
@@ -217,4 +236,3 @@ p img {
   box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
   overflow-x: scroll;
 }
-

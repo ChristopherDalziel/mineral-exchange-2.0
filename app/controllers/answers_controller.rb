@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
       # @answer = current_user.answers.create(answer_params)
       @answer = Answer.new(answer_params)
         if @answer.save
-          redirect_to questions_path
+          redirect_to listing_path(@answer.question.listing)
         else
           render :new
       end
@@ -34,6 +34,5 @@ class AnswersController < ApplicationController
   def answer_params
     answer_params = params.require(:answer).permit( :question_id, :body)
   end
-
 
 end

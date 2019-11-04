@@ -14,31 +14,33 @@
 
 
       <%= link_to 'Ask a question', new_question_path(@listing) %> <br>
-      <table>
+      <table class="qa">
         <thead>
           <tr>
-            <th>Question:</th>
-            <th>Answer:</th>
+            <th class="qa">Subject:</th>
+            <th class="qa">Question:</th>
+            <th class="qa">Answer:</th>
 
-            <th colspan="15"></th>
+            <th class="qa" colspan="15"></th>
           </tr>
         </thead>
         <tbody>
           <% @listing.questions.each do |question| %>
           <tr>
-            <td><%= question.subject %>
-              <%= question.body %>
+            <td class="qa"><%= question.subject %></td>
+              <td class="qa"><%= question.body %></td>
 
             <% question.answers.each do |answer| %>
-              <td><%= answer.body %><br>
+              <td class="qa"><%= answer.body %><br>
             <% end %>
                <% if current_user == @listing.user %>
-              <td><%= link_to 'Answer', new_answer_path(question) %></td>
-              <td><%= link_to 'Edit', edit_listing_path(@listing) %></td>
-              <td><%= link_to 'Destroy', question_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="qa"><%= link_to 'Answer', new_answer_path(question) %></td>
+              <td class="qa"><%= link_to 'Edit', edit_listing_path(@listing) %></td>
+              <td class="qa"><%= link_to 'Destroy', question_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% else %>
               <% end %>
             <% end %>
+            </tbody>
               </table>
         </div>
       </div>

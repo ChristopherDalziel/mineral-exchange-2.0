@@ -1,0 +1,29 @@
+<div class="container">
+  <%= render '/pages/nav' %>
+
+  <div class="hero-container">
+    <div class="hero-box">
+      <div class="container-contact">
+        <form id="contact" action="https://formspree.io/christopher_dalziel@hotmail.com" method="post">
+          <h1>CONTACT Us.</h1>
+          <br>
+          <fieldset>
+            <input name="Name" placeholder="Your name" type="text" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input name="Email" placeholder="Your Email Address" type="email" required>
+          </fieldset>
+          <fieldset>
+            <input name="Contact no" placeholder="Your Phone Number (optional)" type="tel">
+          </fieldset>
+          <fieldset>
+            <textarea name="Message" placeholder="Type your message here...." required></textarea>
+          </fieldset>
+          <fieldset>
+            <input type="text"><button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

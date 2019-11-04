@@ -2,12 +2,12 @@
   <nav>
     <% if user_signed_in? && current_user.is_seller == true %>
       <ul>
-        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <li class="stop"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <li><%= link_to 'Profile', user_details_path %></li>
         <li><%= link_to 'Your Listings', listings_seller_path %></li>
         <li><%= link_to 'New Listing', new_listing_path %></li>
         <li><%= link_to 'Homepage', root_path %></li>
-        <li><%= link_to 'Contact us' %></li></ul>
+        <li><%= link_to 'Contact us', contact_us_path %></li></ul>
     <% elsif user_signed_in? && current_user.is_seller == false %>
             <ul>
               <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>

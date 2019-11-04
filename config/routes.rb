@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # devise_for :user, :controllers => {:registrations => "registrations"}
 
   get "/", to: "pages#home", as: "root"
+  get "contact_us", to:"pages#contact", as: "contact_us"
 
   get "/listings", to: "listings#index_buyer", as: "listings_buyer"
   get "/seller_listings", to: "listings#index_seller", as: "listings_seller"
