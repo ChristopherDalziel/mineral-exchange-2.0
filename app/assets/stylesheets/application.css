@@ -106,15 +106,3 @@ font-family: 'Montserrat Subrayada', sans-serif;
   padding: 10px;
   font-size: 15px;
 }
-
-[type="email"], [type="password"]{
-  cursor: pointer;
-  width: 90%;
-  border: none;
-  background: white;
-  color:black;
-  margin: 0 0 5px;
-  padding: 10px;
-  font-size: 15px;
-  border: solid 1px black;
-}

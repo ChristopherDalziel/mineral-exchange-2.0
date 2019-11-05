@@ -22,3 +22,15 @@
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
 }
+
+[type="email"], [type="password"]{
+  cursor: pointer;
+  width: 90%;
+  border: none;
+  background: white;
+  color:black;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+  border: solid 1px black;
+}

@@ -43,35 +43,35 @@
         <%= f.fields_for :user_detail, UserDetail.new do |ff| %>
          <div>
             <%= ff.label :first_name %>
-            <%= ff.text_field :first_name %>
+            <%= ff.text_field :first_name, :required => true, :placeholder => "Enter first name here", :pattern => "[A-z]", :message => "Please enter a valid name eg. John" %>
         </div>
         <div>
             <%= ff.label :lastname %>
-            <%= ff.text_field :lastname %>
+            <%= ff.text_field :lastname, :required => true, :placeholder => "Enter first name here", :pattern => "[A-Za-z]" %>
         </div>
         <div>
             <%= ff.label :contact_number %>
-            <%= ff.number_field :contact_number %>
+            <%= ff.number_field :contact_number, :required => true, :placeholder => "Enter mobile number here", :pattern => "[0-9]{10}" %>
         </div>
         <div>
             <%= ff.label :address_line_1 %>
-            <%= ff.text_field :address_line_1 %>
+            <%= ff.text_field :address_line_1, :required => true, :placeholder => "Enter address here", :pattern => "[1-9A-Za-z]"%>
         </div>
          <div>
             <%= ff.label :address_line_2 %>
-            <%= ff.text_field :address_line_2 %>
+            <%= ff.text_field :address_line_2, :placeholder => "Optional address line 2", :pattern => "[1-9A-Za-z]"%>
         </div>
         <div>
             <%= ff.label :suburb %>
-            <%= ff.text_field :suburb %>
+            <%= ff.text_field :suburb, :required => true, :placeholder => "Enter suburb here", :pattern => "[A-Za-z]" %>
         </div>
         <div>
             <%= ff.label :state_id %>
-            <%= ff.select :state_id, options_for_select( State.all.collect {|u| [u.name, u.id]}) %>
+            <%= ff.select :state_id, options_for_select( State.all.collect {|u| [u.name, u.id]}), :required => true %>
         </div>
         <div>
             <%= ff.label :postcode %>
-            <%= ff.text_field :postcode %>
+            <%= ff.text_field :postcode, :required => true, :placeholder => "Enter your postcode here", :pattern => "[0-9]{4}" %>
         </div>
         <br>
         <% end %>
