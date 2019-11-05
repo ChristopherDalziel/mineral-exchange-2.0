@@ -87,3 +87,7 @@ The Mineral Exchange app will use [Stripe](www.stripe.com) to handle payment sys
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+rails db:reset
+rails db:migrate
+git push heroku master

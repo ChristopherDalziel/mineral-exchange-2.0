@@ -11,7 +11,23 @@
       <strong>Description:</strong> <%= @listing.description %><br>
       <strong>Location:</strong> <%= @listing.location %><br>
       <strong>Price:</strong> <%= @listing.price %><br><br>
+      <button>Pay: <%= number_to_currency(@listing.price) %></button><br>
 
+      <script src="https://js.stripe.com/v3/"></script>
+
+      <script>
+        document
+          .querySelector("[data-stripe='payment']")
+          .addEventListener("click", () => {
+            const stripe = Stripe(
+              "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+            );
+
+            stripe.redirectToCheckout({
+              sessionId: "<%= @session_id %>"
+            });
+          });
+      </script>
 
       <%= link_to 'Ask a question', new_question_path(@listing) %> <br>
       <table class="qa">
