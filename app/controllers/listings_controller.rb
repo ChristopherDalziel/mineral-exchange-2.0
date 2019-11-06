@@ -30,6 +30,8 @@ class ListingsController < ApplicationController
   def create
     @listing = current_user.listings.create(listing_params)
       if @listing.save
+        enum_change = @listing 
+        enum_change.update(sold: 'no')
         redirect_to listings_path
       else
         render :new

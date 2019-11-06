@@ -10,6 +10,7 @@
         <th>Description:</th>
         <th>Location:</th>
         <th>Price:</th>
+        <th>Sold:</th>
         
         <th colspan="3"></th>
       </tr>
@@ -24,6 +25,12 @@
           <td><%= listing.description %></td>
           <td><%= listing.location %></td>
           <td><%= listing.price %></td>
+
+          <% if listing.sold == 'yes' %>
+            <td><%= 'Sold' %></td>
+            <% elsif listing.sold == 'no' %>
+            <td><%= 'Not Sold' %></td>
+          <% end %>
           
           <% if current_user == listing.user %>
             <td><%= link_to 'Edit', edit_listing_path(listing) %></td>

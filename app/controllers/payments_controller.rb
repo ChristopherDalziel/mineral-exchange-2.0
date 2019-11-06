@@ -16,5 +16,14 @@ class PaymentsController < ApplicationController
 
   end
 
+  def success
+    @listing = Listing.find(params[:listingId])
+    @user = User.find(params[:userId])
+
+    enum_change = Listing.find(params[:listingId])
+    enum_change.update(sold: 'yes')
+    enum_change.save
+  end  
+
   
 end

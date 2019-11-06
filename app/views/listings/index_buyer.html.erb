@@ -2,23 +2,19 @@
   <%= render '/pages/nav' %>
 
   <div class="grid-container">
+  
     <% @listings.each do |listing| %>
+      <% if listing.sold == 'no' %>
         <div class="grid-item"> 
           <%= image_tag listing.picture if listing.picture.attached? %><br>
-          
-       
           Type: <%= listing.type.name %><br>
           Name: <%= listing.mineral_name %><br>
-  
-        
-          Price: <%= listing.price %><br>
+          Price: $<%= listing.price %><br>
           <%= link_to 'Show', listing_path(listing) %>
           </div>
-       
         <% end %>
+      <% end %>
     </div>
     <%= render '/pages/footer' %>
   </div>
-  
- 
 </div>

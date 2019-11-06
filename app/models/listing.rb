@@ -3,7 +3,7 @@ class Listing < ApplicationRecord
   belongs_to :type
   has_many :questions, dependent: :destroy
 
-  enum sold: { yes: 0, no: 1 }
+  enum sold: { no: 1, yes: 0 }
 
   validates :mineral_name, :location, presence: true
 
