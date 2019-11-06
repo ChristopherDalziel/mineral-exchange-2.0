@@ -41,7 +41,7 @@ Rock sellers / collectors need JUSTICE
 ### Purchase fail
 ![Purchase fail Wireframe](/app/assets/images/md_images/purchase_fail_page.png)
 ### Contact Us
-![Contact us form Wireframe](app/assets/images/md_images/contact_us_page.png)
+![Contact us form Wireframe](app/assets/images/md_images/contact_page.png)
 ### Example Mobile Page Views
 ![Example Mobile Page Views](/app/assets/images/md_images/example_mobile_page_views.png)
 
