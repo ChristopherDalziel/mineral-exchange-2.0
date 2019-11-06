@@ -20,7 +20,7 @@ Rock sellers / collectors need JUSTICE
 - Tech stack (e.g. html, css, deployment platform, etc)
 
 # Epic/Stories
-![Epic with Stories](/app/assets/images/md_images/stories.png)
+![Epic with Stories](/app/assets/images/md_images/stories.jpeg)
 
 # Wireframes
 
@@ -40,6 +40,8 @@ Rock sellers / collectors need JUSTICE
 ![Purchase success Wireframe](/app/assets/images/md_images/purchase_success_page.png)
 ### Purchase fail
 ![Purchase fail Wireframe](/app/assets/images/md_images/purchase_fail_page.png)
+### Contact Us
+![Contact us form Wireframe](app/assets/images/md_images/contact_us_page.png)
 ### Example Mobile Page Views
 ![Example Mobile Page Views](/app/assets/images/md_images/example_mobile_page_views.png)
 
