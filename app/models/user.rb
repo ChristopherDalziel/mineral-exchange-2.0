@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :listings
-         has_one :user_detail
-         accepts_nested_attributes_for :user_detail
+  has_many :listings
+  has_one :user_detail
+  accepts_nested_attributes_for :user_detail
+
+  validates_format_of :email,:with => Devise::email_regexp
+  
 end
