@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get "/questions/new/:listing_id", to: "questions#new", as: "new_question"
   put "/questions/:id", to: "questions#update"
   patch "/questions/:id", to: "questions#update"
-  delete "/questions/:id", to: "questions#destroy"
+  delete "/questions/:id", to: "questions#destroy", as: "delete_question"
   get "questions/:id/edit", to: "questions#edit", as: "edit_question"
 
   get "/answers/:question_id", to: "answers#index", as: "answer"
@@ -42,6 +42,9 @@ Rails.application.routes.draw do
   patch "/answers/:id", to: "answers#update"
   delete "/answers/:id", to: "answers#destroy"
   get "answers/:id/edit", to: "answers#edit", as: "edit_answer"
+
+  get "/payments/success", to: "payments#success"
+  get "*path", to: "pages#not_found", constraints: lambda { |req| req.path.exclude? 'rails/active_storage' }
 
   # delete "/listings/:id", to: "listings#destroy"
 end

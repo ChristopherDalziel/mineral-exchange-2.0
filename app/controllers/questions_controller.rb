@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
       # before_action :authenticate_user!
-      # before_action :set_question, only: [ :show, :create ]
+      before_action :set_question, only: [ :show, :create, :destroy ]
       # before_action :set_user_question, only: [ :edit, :update, :destroy ]
 
   def index
@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question.destroy(question_params)
+    @question.destroy
     redirect_to listings_path
   end
 

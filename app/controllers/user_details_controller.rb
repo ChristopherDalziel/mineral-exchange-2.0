@@ -21,8 +21,7 @@ class UserDetailsController < ApplicationController
       render :edit
     end
   end
-  
-    
+   
   def create
     @user_detail = UserDetail.new(user_detail_params)
     @user_detail.user_id = current_user.id

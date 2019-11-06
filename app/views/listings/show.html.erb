@@ -10,8 +10,9 @@
       <strong>Mineral:</strong> <%= @listing.type.name %><br>
       <strong>Description:</strong> <%= @listing.description %><br>
       <strong>Location:</strong> <%= @listing.location %><br>
-      <strong>Price:</strong> <%= @listing.price %><br><br>
-      <button>Pay: <%= number_to_currency(@listing.price) %></button><br>
+      <strong>Price:</strong> $<%= @listing.price %><br><br>
+      <% if user_signed_in? && current_user.is_seller == false %>
+        <button data-stripe="payment">Pay: <%= number_to_currency(@listing.price) %></button><br>
 
       <script src="https://js.stripe.com/v3/"></script>
 
@@ -28,6 +29,12 @@
             });
           });
       </script>
+      <% elsif user_signed_in? && current_user.is_seller == true %>
+      <p>Sign into a Buyer account to make a purchase</p>
+
+      <% else %>
+
+      <% end %>
 
       <%= link_to 'Ask a question', new_question_path(@listing) %> <br>
       <table class="qa">
@@ -51,8 +58,8 @@
             <% end %>
                <% if current_user == @listing.user %>
               <td class="qa"><%= link_to 'Answer', new_answer_path(question) %></td>
-              <td class="qa"><%= link_to 'Edit', edit_listing_path(@listing) %></td>
-              <td class="qa"><%= link_to 'Destroy', question_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="qa"><%= link_to 'Edit', edit_answer_path(@listing) %></td>
+              <td class="qa"><%= link_to 'Destroy', delete_question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% else %>
               <% end %>
             <% end %>
