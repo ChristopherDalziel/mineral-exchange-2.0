@@ -9,7 +9,6 @@ class AnswersController < ApplicationController
   end
 
   def create
-      # @answer = current_user.answers.create(answer_params)
       @answer = Answer.new(answer_params)
         if @answer.save
           redirect_to listing_path(@answer.question.listing)
