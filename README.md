@@ -20,7 +20,7 @@ Rock sellers / collectors need JUSTICE
 - Tech stack (e.g. html, css, deployment platform, etc)
 
 # Epic/Stories
-![Epic with Stories](/app/assets/images/md_images/stories.jpeg)
+![Epic with Stories](/app/assets/images/md_images/Stories.jpeg)
 
 # Wireframes
 
