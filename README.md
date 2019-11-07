@@ -46,9 +46,9 @@ The purpose of my marketplace app is to design a functional two-way marketplace 
 - [Stripe](www.stripe.com) Payment system
 - [Formspree](https://formspree.io/) Email forwarding
 
-
 #### Sitemap
-#### Screenshots
+![Sitemap Displayed as a flowchart/graph](/app/assets/images/md_images/sitemap.png)
+
 #### Target audience
 My target audience for this web marketplace is primarly collects, sellers and buyers of different types of rocks, fossils and minerals. 
 
@@ -71,27 +71,47 @@ My target audience for this web marketplace is primarly collects, sellers and bu
 # Epic/Stories
 ![Epic with Stories](/app/assets/images/md_images/Stories.jpeg)
 
-# Wireframes
+# Wireframes & Screenshots
 
 ### Homepage
+##### Wireframe
 ![Homepage Wireframe](/app/assets/images/md_images/home_page.png)
+##### Screenshot
+![Sign up Screenshot](app/assets/images/md_images/home_page_screen.png)
 ### Sign up page
+##### Wireframe
 ![Sign up Wireframe](/app/assets/images/md_images/sign_up_page.png)
+##### Screenshot
 ### Listings page(Buyer)
+##### Wireframe
 ![Listings Buyer Wireframe](/app/assets/images/md_images/listings_page.png)
+##### Screenshot
 ### Listings page(Seller)
+##### Wireframe
 ![Listings Seller Wireframe](app/assets/images/md_images/listings_page_seller.png)
+##### Screenshot
 ### Listings create
+##### Wireframe
 ![Create Listing Wireframe](/app/assets/images/md_images/listing_create_page.png)
+##### Screenshot
 ### Listings show
+##### Wireframe
 ![Listing show Wireframe](/app/assets/images/md_images/listing_show.png)
+##### Screenshot
 ### Purchase success
+##### Wireframe
 ![Purchase success Wireframe](/app/assets/images/md_images/purchase_success_page.png)
+##### Screenshot
 ### Purchase fail
+##### Wireframe
 ![Purchase fail Wireframe](/app/assets/images/md_images/purchase_fail_page.png)
+##### Screenshot
 ### Contact Us
+##### Wireframe
 ![Contact us form Wireframe](app/assets/images/md_images/contact_page.png)
+##### Screenshot
 ### Example Mobile Page Views
+##### Wireframe
 ![Example Mobile Page Views](/app/assets/images/md_images/example_mobile_page_views.png)
 
 # ERD
@@ -110,7 +130,7 @@ Type:
 ```
 has_many :listings
 ```
-- Type has_many listings
+- The type model has_many listings because each listing will have a type, and sellers can create as many listings as they'd like, so it's likely there will be more than one type used on our listings.
 
 User: 
 ```
@@ -194,6 +214,11 @@ In the schema screen shots below you'll see the different attributes and datatyp
 ## Describe the way tasks are allocated and tracked in your project:
 During this project I used [Trello](www.trello.com/) having used it in previous assignments I found it a really helpful way to keep tracking of what I need to do, what I'm currently working on and what I've completed already. During this project I also used the feature of Trello where you can add a due date for yourself, I used this to help myself stay on track with my progress.
 You can see my attached screen grabs of my progress below.
-![]()
+![Trello Screenshot 1](app/assets/images/md_images/trello-1.png)
+![Trello Screenshot 2](app/assets/images/md_images/trello-2.png)
+![Trello Screenshot 3](app/assets/images/md_images/trello-3.png)
+![Trello Screenshot 4](app/assets/images/md_images/trello-4.png)
+![Trello Screenshot 5](app/assets/images/md_images/trello-5.png)
+![Trello Screenshot 6](app/assets/images/md_images/trello-6.png)
 
 *Going to add trello screen shots here
