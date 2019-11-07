@@ -3,7 +3,6 @@ class UserDetailsController < ApplicationController
   before_action :set_user_user_detail, only: [ :show, :edit, :update, :destroy ]
 
   def index 
-    # @user_detail = UserDetail.all
     @user_detail = current_user.user_detail
   end
 

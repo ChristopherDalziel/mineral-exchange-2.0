@@ -141,7 +141,6 @@ Answer:
 ```
 belongs_to :question
 ```
-
 ## Discuss the database relations to be implemented in your application:
 erd
 -

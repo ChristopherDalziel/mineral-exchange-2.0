@@ -22,6 +22,7 @@
   box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
 }
 
+/* Image displaying grid */
 .grid-item img {
   margin-top: 10px;
   height: 100px;
@@ -55,15 +56,17 @@ td.qa {
   border: none;
 }
 
+/* table heading questions/answers */
 th.qa {
   border-bottom: black 1px dotted;
 }
 
+/* table row questions/answers */
 tr.qa {
   border: none;
 }
 
-/* Sellers Listings Display */
+/* Sellers Listings display */
 table {
   /* height: 80%; */
   width: 100%;

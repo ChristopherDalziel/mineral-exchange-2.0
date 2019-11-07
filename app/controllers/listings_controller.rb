@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  # before_action :authenticate_user!
+
   before_action :set_listing, only: [ :show ]
   before_action :set_user_listing, only: [ :edit, :update, :destroy ]
 
@@ -44,6 +44,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+    # Stripe payments active if the user is signed in - prevents the page from crashing for non-signed up users
     if user_signed_in? 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -68,8 +69,6 @@ class ListingsController < ApplicationController
     @session_id = session.id
       else 
     end
-
-    # @question = Question.new
   end
 
   private

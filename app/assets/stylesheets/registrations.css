@@ -1,4 +1,5 @@
-/* Login and Logout wouldn't work together on one line */
+/* Login form css */
+/* Had to split up login/logouts otherwise it wouldn't work */
 .test form input[value="Logout"]:hover {
   background-color: #DC3F5C;
   color: white;

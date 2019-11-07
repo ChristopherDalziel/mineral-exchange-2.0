@@ -35,10 +35,12 @@ font-family: 'Raleway', sans-serif; */
   display: none;
 }
 
+/* h1 display art font */
 h1 {
 font-family: 'Montserrat Subrayada', sans-serif;
 }
 
+/* entire page container + background image linking */
 .container {
   display: flex;
   flex-direction: column;
@@ -49,12 +51,15 @@ font-family: 'Montserrat Subrayada', sans-serif;
   background-position: center;
   background-size: 106%;
 }
- 
+
+ /* Container within container to hold the hero-box */
 .hero-container {
   display: flex;
 	justify-content: space-evenly;
 }
 
+
+/* Hero box centered to hold data or information */
 .hero-box {
   text-align: center;
   margin-top: 20vh;
@@ -65,6 +70,7 @@ font-family: 'Montserrat Subrayada', sans-serif;
   box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
 }
 
+/* Used when I want to display 2 hero boxes on a page */
 .hero-box-two {
   text-align: center;
   margin-top: 20vh;
@@ -85,6 +91,7 @@ font-family: 'Montserrat Subrayada', sans-serif;
 
 }
 
+/* Logo styling and sizing */
 .logo {
   margin: auto;
   margin-top: 15px;
@@ -96,6 +103,7 @@ font-family: 'Montserrat Subrayada', sans-serif;
   background-position: center;
 }
 
+/* Submit button styling */
 .button_to [type="submit"] { 
   cursor: pointer;
   width: 90%;

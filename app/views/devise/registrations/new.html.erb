@@ -40,6 +40,8 @@
           <%= f.radio_button :is_seller, false, required: 'required' %>
         </div><br>
 
+        <!-- The beginning of my nested table user_detail -->
+
         <%= f.fields_for :user_detail, UserDetail.new do |ff| %>
          <div>
             <%= ff.label :first_name %>

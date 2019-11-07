@@ -1,7 +1,6 @@
 <div class="container">
   <%= render '/pages/nav' %>
   <div class="grid-container">
-  
     <% @listings.each do |listing| %>
       <% if listing.sold == 'no' %>
         <div class="grid-item"> 
