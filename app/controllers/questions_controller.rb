@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
       # before_action :authenticate_user!
-      before_action :set_question, only: [ :show, :create, :destroy ]
+      before_action :set_question, only: [ :show, :destroy ]
       # before_action :set_user_question, only: [ :edit, :update, :destroy ]
 
   def index
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   def create
       @question = Question.new(question_params)
         if @question.save
-          redirect_to listings_path
+          redirect_to listing_path(@question.listing.id)
         else
           render :new
       end
@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to listings_path
+    redirect_to listing_path(@question.listing.id)
   end
 
   private

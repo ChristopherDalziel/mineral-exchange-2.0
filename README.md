@@ -18,6 +18,7 @@ Rock sellers / collectors need JUSTICE
 - Screenshots
 - Target audience
 - Tech stack (e.g. html, css, deployment platform, etc)
+Tech Stack: HTML5, CSS, Heroku, Swipe, AWS.
 
 # Epic/Stories
 ![Epic with Stories](/app/assets/images/md_images/Stories.jpeg)
@@ -49,19 +50,22 @@ Rock sellers / collectors need JUSTICE
 ![ERD Chart](/app/assets/images/md_images/T2A2-ERD.png)
 
 ## Explain the different high-level components (abstractions) in your app:
+One of the high-level components in my application is Active-Record. Active-Record is a Ruby libary working with an SQL database (In our case PostgreSQL) and is also the "M" within the "MVC" design pattern (Model, View, Controller).<br>
+Active-Record works with ORM ()
 
 ## Detail any third party services that your app will use:
-The Mineral Exchange app will use [Stripe](www.stripe.com) to handle payment systems and [AWS](www.https://aws.amazon.com/) to handle image uploading and hosting. 
+The Mineral Exchange app will use [Stripe](www.stripe.com) to handle payment systems and [AWS](www.https://aws.amazon.com) to handle image uploading and hosting. 
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other:
 
 ## Discuss the database relations to be implemented in your application:
 
 ## Provide your database schema design:
+![Schema.rb File Screen shots](app/assets/images/md_images/schema_1.png)
+![Schema.rb File Screen shots](app/assets/images/md_images/schema_2.png)
+![Schema.rb File Screen shots](app/assets/images/md_images/schema_3.png)
 
 ## Describe the way tasks are allocated and tracked in your project:
-
-
 
 #### Ruby version
 - Ruby 2.5.1
