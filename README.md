@@ -41,7 +41,7 @@ The purpose of my marketplace app is to design a functional two-way marketplace 
 ##### General
 - Custom form inputs for contact, user sign ups and listing creation and editing
 - Upon a listing been purchase the listing will be removed from the web-app ready for the seller to delete if they chose
-- [AWS](www.https://aws.amazon.com/) Image hosting
+- [AWS](www.aws.amazon.com/) Image hosting
 - [Stripe](www.stripe.com) payment system
 - [Formspree](https://formspree.io/) Email forwarding
 
@@ -60,7 +60,7 @@ My target audience for this web marketplace is primarly collects, sellers and bu
 
 ##### Third Party Services
 - [Stripe](www.stripe.com) (Payment handling)
-- [AWS](www.https://aws.amazon.com/) (Image hosting)
+- [AWS](www.aws.amazon.com/) (Image hosting)
 - [Formspree](https://formspree.io/) (Email forwarding)
 - [Heroku](www.heroku.com/) (Deployment)
 
@@ -102,15 +102,45 @@ Doing this allows us to access our SQL database (In our case PostgreSQL) without
 Active-Record also allows us the ability to represent our models and their data, assosiations between our models, represent inheritance through related models and validate models before they get persisted to the database. These columns are accessed by methods are inffered inside the database schema.
 
 ## Detail any third party services that your app will use:
-The Mineral Exchange app will use [Stripe](www.stripe.com) to handle payment systems, [AWS](www.https://aws.amazon.com) to handle image uploading and hosting, [Formspree](https://formspree.io/) is been used to handle the contact form for all users to use to contact whoever is controling the web-app, and [Heroku](www.heroku.com/) to deploy.
+The Mineral Exchange app will use [Stripe](www.stripe.com) to handle payment systems, [AWS](www.aws.amazon.com) to handle image uploading and hosting, [Formspree](https://formspree.io/) is been used to handle the contact form for all users to use to contact whoever is controling the web-app, and [Heroku](www.heroku.com/) to deploy.
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other:
-The web-app 
-
-has_many
-has_one
-through
-depedent deletions
+Type: 
+```
+has_many :listings
+```
+User: 
+```
+has_many :listings
+has_one :user_detail
+accepts_nested_attributes_for :user_detail
+```
+User_Detail:
+```
+belongs_to :user
+belongs_to :state
+has_many :states
+```
+State:
+```
+```
+Listing:
+```
+belongs_to :user
+belongs_to :type
+has_many :questions, dependent: :destroy
+has_one_attached :picture
+enum sold: { no: 1, yes: 0 }
+```
+Question:
+```
+belongs_to :listing
+has_many :answers, dependent: :destroy
+```
+Answer:
+```
+belongs_to :question
+```
 
 ## Discuss the database relations to be implemented in your application:
 erd

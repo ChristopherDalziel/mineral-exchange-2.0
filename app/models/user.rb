@@ -9,5 +9,4 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_detail
 
   validates_format_of :email,:with => Devise::email_regexp
-  
 end

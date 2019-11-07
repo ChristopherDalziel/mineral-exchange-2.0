@@ -1,8 +1,20 @@
 <div class="container">
-  <%= render 'nav' %>
+  <%= render '/pages/nav' %>
     <div class="hero-container">
       <div class="hero-box">
-      success payment
-    </div>
-  <%= render 'footer' %>
+      <h1>Payment Successful</h1>
+
+      <p>
+        <%= image_tag @listing.picture if @listing.picture.attached? %>
+      </p>
+
+      <strong>Mineral:</strong> <%= @listing.type.name %><br>
+      <strong>Description:</strong> <%= @listing.description %><br>
+      <strong>Location:</strong> <%= @listing.location %><br>
+      <strong>Price:</strong> $<%= @listing.price %><br><br>
+      <%= link_to 'Back to listings', listings_path %>
+
+      </div>
+   </div>
+  <%= render '/pages/footer' %>
 </div>

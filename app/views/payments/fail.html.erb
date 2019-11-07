@@ -2,7 +2,24 @@
   <%= render 'nav' %>
     <div class="hero-container">
       <div class="hero-box">
-      failed payment
-    </div>
+
+      <h1>Payment Failed</h1><br>
+      <h2>Please try again</h2>
+
+      <p>
+        <%= image_tag @listing.picture if @listing.picture.attached? %>
+      </p>
+
+      <strong>Mineral:</strong> <%= @listing.type.name %><br>
+      <strong>Description:</strong> <%= @listing.description %><br>
+      <strong>Location:</strong> <%= @listing.location %><br>
+      <strong>Price:</strong> $<%= @listing.price %><br><br>
+      
+      <%= link_to 'Back to listings', listings_path %>
+
+      </div>
+
+      </div>
+   </div>
   <%= render 'footer' %>
 </div>
