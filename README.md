@@ -41,8 +41,9 @@ The purpose of my marketplace app is to design a functional two-way marketplace 
 ##### General
 - Custom form inputs for contact, user sign ups and listing creation and editing
 - Upon a listing been purchase the listing will be removed from the web-app ready for the seller to delete if they chose
+- Input validation
 - [AWS](www.aws.amazon.com/) Image hosting
-- [Stripe](www.stripe.com) payment system
+- [Stripe](www.stripe.com) Payment system
 - [Formspree](https://formspree.io/) Email forwarding
 
 
@@ -109,21 +110,26 @@ Type:
 ```
 has_many :listings
 ```
+- Type has_many listings
+
 User: 
 ```
 has_many :listings
 has_one :user_detail
 accepts_nested_attributes_for :user_detail
 ```
+- The users model has many_listings because one user is able to post as many listings are they'd like.
+- The users model also has_one user_detail, this is because the user_detail model is an extension of Users and gives us access to futher information, this is why User accepts_nested_attributes_for the user_detail table.
+
 User_Detail:
 ```
 belongs_to :user
 belongs_to :state
 has_many :states
 ```
-State:
-```
-```
+- The user_detail model belongs to the User table because it's nested and gives extra information to that table.
+- User_detail also belongs_to state because the state model gives information to the user_detail model and then the user_detail also has_many states because the state model can have many user_details.
+
 Listing:
 ```
 belongs_to :user
@@ -132,15 +138,27 @@ has_many :questions, dependent: :destroy
 has_one_attached :picture
 enum sold: { no: 1, yes: 0 }
 ```
+- The Listing model belongs_to the user model, this is because a user is able to have a listing(or many, but this isn't shown here). 
+- Listing also belongs_to the type model because it there are many different types that are able to be linked to a single listing.
+- Inside of the listings model it has_many questions, this is because a single listing can have as many questions as the buyers ask, it also has a depedentcy destroy so when a listing is destroyed by a seller it also destroys the attached questions.
+- The listing model is also has_one_attached picture, this is allows the user to upload one image of their own via AWS.
+- Lastly the listings model holds a enum value which is set to 1 or 0 upon listing it's automatically set to "no" or "1" upon a succesful payment been made the enum is changed to "yes" or "0" this removes the listing from the buyers view.
+
 Question:
 ```
 belongs_to :listing
 has_many :answers, dependent: :destroy
 ```
+- The question model belongs_to the listing model because questions are attached to listing_id, so they aren't shown on an other listings other than the attached id
+- A question has_many answers so the seller is able to answer as many times as required, this also has a destroy depedency so if a question or a listing is deleted so are the attached answer(s).
+
 Answer:
 ```
 belongs_to :question
 ```
+- The answer model belongs_to the question model so the answer is only shown on the attached question_id not on all questions, this happens in exactly the same way as the initial question is attached to a listing_id
+
+
 ## Discuss the database relations to be implemented in your application:
 erd
 -
@@ -149,12 +167,33 @@ f-keys
 tables erd
 
 ## Provide your database schema design:
-explain the third time 
+In the schema screen shots below you'll see the different attributes and datatypes I've selected for the models/tables, I thought I would also go over some of the reasoning behind my choices on each table. <br>
+
+##### Active Storage Attachment/Blob Models
+- These tables are implimented for us by AWS when we install their functionality, and we don't have any choice over the attributes and datatypes.
+
+##### Question/Answer Model
+- For the subject line in the question model I used 'string' because a subject doesn't need to be longer than 255 characters
+- For the body of each I used 'text' so both the buyer and the seller would be able to write as much as they needed.
+
+##### Listing Model
+- Inside the listings table I used 'text' once more the the seller would have enough room to add any amount of information they require
+- I used 'integer' on both the price column however this was to function correctly with [Stripe](www.stripe.com)(As far as I'm aware Stripe only accepts integers) but also incase I needed to do any form of calculation for the payment now or in the future which wouldn't be possbile with a string.
+- For the sold column I decided to make an 'enum' this was more for my own personal development I wanted to see how they worked even though for this assignment I've only used two fields 1 and 0 which is essentially just creating a boolean value. It was a learning expierence so in the future I can use both enums and boolean. 
+
+##### User Detail Model
+- The only thing really worth noting inside my user detail model is my use of integer for the postcode, although the postcode is a integer there isn't really any reason to store the datatype as such, it probably would have made a more sense to use a string and restrict the input using validation to 4. 
+
+##### User Model
+- The user model is created by devise however I did use a migration to add my own column 'is_seller' which takes the datatype 'boolean' I did this so I could split my users and allow them to access different parts of my website, I used 'boolean' as I said before so I had the expierence of using both boolean and enumn datatypes.
+
 ![Schema.rb File Screen shots](app/assets/images/md_images/schema_1.png)
 ![Schema.rb File Screen shots](app/assets/images/md_images/schema_2.png)
 ![Schema.rb File Screen shots](app/assets/images/md_images/schema_3.png)
-
+ 
 ## Describe the way tasks are allocated and tracked in your project:
+During this project I used [Trello](www.trello.com/) having used it in previous assignments I found it a really helpful way to keep tracking of what I need to do, what I'm currently working on and what I've completed already. During this project I also used the feature of Trello where you can add a due date for yourself, I used this to help myself stay on track with my progress.
+You can see my attached screen grabs of my progress below.
 ![]()
 
 *Going to add trello screen shots here
