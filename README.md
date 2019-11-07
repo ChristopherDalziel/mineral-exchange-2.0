@@ -46,7 +46,7 @@ Rock sellers / collectors need JUSTICE
 ![Example Mobile Page Views](/app/assets/images/md_images/example_mobile_page_views.png)
 
 # ERD
-![ERD Chart](/app/assets/images/md_images/ead.jpeg)
+![ERD Chart](/app/assets/images/md_images/T2A2-ERD.png)
 
 ## Explain the different high-level components (abstractions) in your app:
 
