@@ -66,7 +66,7 @@ My target audience for this web marketplace is primarly collects, sellers and bu
 - [Heroku](www.heroku.com/) (Deployment)
 
 ##### Gems
-- Devise (For handling user sign ups)
+- Devise (For handling user sign ups)c
 
 # Epic/Stories
 ![Epic with Stories](/app/assets/images/md_images/Stories.jpeg)
@@ -220,5 +220,3 @@ You can see my attached screen grabs of my progress below.
 ![Trello Screenshot 4](app/assets/images/md_images/trello-4.png)
 ![Trello Screenshot 5](app/assets/images/md_images/trello-5.png)
 ![Trello Screenshot 6](app/assets/images/md_images/trello-6.png)
-
-*Going to add trello screen shots here

@@ -1,28 +1,37 @@
 <%= form_with model: user_detail, local: true do |form| %>
     <section>
+        <% if user_detail.errors.any? %>
+        <div id="error_explanation">
+            <ul>
+                <% user_detail.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div><br>
+        <% end %>
         <div>
             <%= form.label :first_name %>
-            <%= form.text_field :first_name %>
+            <%= form.text_field :first_name, :required => true %>
         </div>
         <div>
             <%= form.label :lastname %>
-            <%= form.text_field :lastname %>
+            <%= form.text_field :lastname, :required => true %>
         </div>
         <div>
             <%= form.label :contact_number %>
-            <%= form.number_field :contact_number %>
+            <%= form.number_field :contact_number, :required => true, :placeholder => "Eg: 0412 345 678" %>
         </div>
         <div>
             <%= form.label :address_line_1 %>
-            <%= form.text_field :address_line_1 %>
+            <%= form.text_field :address_line_1, :required => true %>
         </div>
          <div>
             <%= form.label :address_line_2 %>
-            <%= form.text_field :address_line_2 %>
+            <%= form.text_field :address_line_2, :placeholder => "Optionable field" %>
         </div>
         <div>
             <%= form.label :suburb %>
-            <%= form.text_field :suburb %>
+            <%= form.text_field :suburb, :required => true %>
         </div>
         <div>
             <%= form.label :state_id %>
@@ -30,7 +39,7 @@
         </div>
         <div>
             <%= form.label :postcode %>
-            <%= form.text_field :postcode %>
+            <%= form.text_field :postcode, :required => true, :placeholder => "Eg: 1234"%>
         </div>
         <br>
 

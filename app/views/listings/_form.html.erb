@@ -10,15 +10,15 @@
         </div>
         <div>
             <%= form.label :description %>
-            <%= form.text_field :description, :required => true, :placeholder => "Enter a description of snakes", :pattern => "[^0-9]*"%>
+            <%= form.text_field :description, :required => true, :placeholder => "Item Description", :pattern => "[^0-9]*"%>
         </div>
          <div>
             <%= form.label :location %>
-            <%= form.text_field :location %>
+            <%= form.text_field :location, :required => true, :placeholder => "Where mineral originated from" %>
         </div>
         <div>
             <%= form.label :price %>
-            <%= form.number_field :price, min: 0 %>
+            <%= form.number_field :price, min: 0, :required => true, :placeholder => "Price" %>
         </div>
         <div>
             <%= form.label :picture %>
