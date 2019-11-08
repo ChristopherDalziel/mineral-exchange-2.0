@@ -1,5 +1,8 @@
 class AnswersController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :set_user_listing, only: [ :new, :create, :update ]
+
   def index
     @answers = Answers.all
   end
@@ -29,6 +32,16 @@ class AnswersController < ApplicationController
   end
 
   private
+
+  def set_user_listing
+    id = params[:id]
+    @answer = current_user.listings.find_by_id(id)
+
+    if @listing == nil
+      redirect_to listings_path
+    end
+    
+  end
 
   def answer_params
     answer_params = params.require(:answer).permit( :question_id, :body)

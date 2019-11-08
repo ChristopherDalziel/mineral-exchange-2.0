@@ -19,6 +19,5 @@ class PaymentsController < ApplicationController
     enum_change.update(sold: 'yes')
     enum_change.save
   end  
-
   
 end
