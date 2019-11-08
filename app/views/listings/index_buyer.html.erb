@@ -7,7 +7,7 @@
           <%= image_tag listing.picture if listing.picture.attached? %><br>
           Type: <%= listing.type.name %><br>
           Name: <%= listing.mineral_name %><br>
-          Price: $<%= listing.price %><br><br>
+          Price: $<%= listing.price %><br>
           <%= link_to 'See More Information', listing_path(listing) %>
           </div>
         <% end %>

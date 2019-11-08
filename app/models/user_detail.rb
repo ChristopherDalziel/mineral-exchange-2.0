@@ -5,7 +5,7 @@ class UserDetail < ApplicationRecord
 
   validates :contact_number, numericality: true
 
-  validates :first_name, :lastname, :address_line_1, :address_line_2, :suburb, presence: true
+  validates :first_name, :lastname, :address_line_1, :suburb, presence: true
 
   validates :postcode, numericality: true,
                         length: { is: 4 }
