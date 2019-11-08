@@ -224,10 +224,5 @@ In the schema screen shots below you'll see the different attributes and datatyp
  
 ## Describe the way tasks are allocated and tracked in your project:
 During this project I used [Trello](www.trello.com/) having used it in previous assignments I found it a really helpful way to keep tracking of what I need to do, what I'm currently working on and what I've completed already. During this project I also used the feature of Trello where you can add a due date for yourself, I used this to help myself stay on track with my progress.
-You can see my attached screen grabs of my progress below.
-![Trello Screenshot 1](app/assets/images/md_images/trello-1.png)
-![Trello Screenshot 2](app/assets/images/md_images/trello-2.png)
-![Trello Screenshot 3](app/assets/images/md_images/trello-3.png)
-![Trello Screenshot 4](app/assets/images/md_images/trello-4.png)
-![Trello Screenshot 5](app/assets/images/md_images/trello-5.png)
-![Trello Screenshot 6](app/assets/images/md_images/trello-6.png)
+You can see my attached screen grabs of my progress below, full size are avalible inside the assets folder.
+![Trello Screenshots](app/assets/images/md_images/trello-screens.jpg)
