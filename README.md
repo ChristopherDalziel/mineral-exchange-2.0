@@ -186,6 +186,9 @@ migrations
 f-keys
 tables erd
 
+heroku run rake db:reset
+heroku run rake db:seed
+
 ## Provide your database schema design:
 In the schema screen shots below you'll see the different attributes and datatypes I've selected for the models/tables, I thought I would also go over some of the reasoning behind my choices on each table. <br>
 
