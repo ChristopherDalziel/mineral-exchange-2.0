@@ -78,19 +78,25 @@ My target audience for this web marketplace is primarly collects, sellers and bu
 ![Homepage Wireframe](/app/assets/images/md_images/home_page.png)
 ##### Screenshot
 ![Homepage Screenshot](app/assets/images/md_images/home_page_screen.png)
+
 ### Sign up page
 ##### Wireframe
 ![Sign up Wireframe](/app/assets/images/md_images/sign_up_page.png)
 ##### Screenshot
 ![Sign up Screenshot](/app/assets/images/md_images/sign_up_page_screen.png)
+
 ### Listings page(Buyer)
 ##### Wireframe
 ![Listings Buyer Wireframe](/app/assets/images/md_images/listings_page.png)
 ##### Screenshot
+![Listings Buyer Screenshot](/app/assets/images/md_images/listings_page_screen.png)
+
 ### Listings page(Seller)
 ##### Wireframe
-![Listings Seller Wireframe](app/assets/images/md_images/listings_page_seller.png)
+![Listings Seller Wireframe](/app/assets/images/md_images/listings_page_seller.png)
 ##### Screenshot
+![Listings Seller Screenshot](/app/assets/images/md_images/listings_page_seller_screen.png)
+
 ### Listings create
 ##### Wireframe
 ![Create Listing Wireframe](/app/assets/images/md_images/listing_create_page.png)
