@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  
+  # devise_for :user
 
-  devise_for :user
-
-  # devise_for :user, :controllers => {:registrations => "registrations"}
+  devise_for :user, :controllers => {:registrations => "registrations"}
 
   get "/", to: "pages#home", as: "root"
   get "contact_us", to:"pages#contact", as: "contact_us"
@@ -45,6 +45,4 @@ Rails.application.routes.draw do
 
   get "/payments/success", to: "payments#success"
   get "*path", to: "pages#not_found", constraints: lambda { |req| req.path.exclude? 'rails/active_storage' }
-
-  # delete "/listings/:id", to: "listings#destroy"
 end

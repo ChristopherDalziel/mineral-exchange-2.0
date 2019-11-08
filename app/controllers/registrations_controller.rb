@@ -5,8 +5,8 @@ class RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit :sign_up, keys: [:is_seller, :email, :password,  user_detail_attributes: [ :first_name, :lastname, :state_id]]
-    devise_parameter_sanitizer.permit :account_update, keys: [:is_seller, :email, :password,  user_detail_attributes: [ :first_name, :lastname, :state_id]]
+    devise_parameter_sanitizer.permit :sign_up, keys: [:is_seller, :email, :password,  user_detail_attributes: [ :first_name, :lastname, :state_id, :contact_number, :address_line_1, :address_line_2, :suburb, :postcode]]
+    devise_parameter_sanitizer.permit :account_update, keys: [:is_seller, :email, :password,  user_detail_attributes: [ :first_name, :lastname, :state_id, :contact_number, :address_line_1, :address_line_2, :suburb, :postcode]]
   end
 
   def new
@@ -15,7 +15,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-
   end
 
   private

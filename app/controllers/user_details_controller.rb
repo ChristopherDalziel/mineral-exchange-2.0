@@ -10,6 +10,7 @@ class UserDetailsController < ApplicationController
   end
 
   def new
+    byebug
     @user_detail = UserDetail.new
   end
 
