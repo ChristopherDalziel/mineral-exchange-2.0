@@ -114,3 +114,8 @@ font-family: 'Montserrat Subrayada', sans-serif;
   padding: 10px;
   font-size: 15px;
 }
+
+/* Sign up information box */
+.sign-up-info h1 {
+  font-size: 32px;
+}

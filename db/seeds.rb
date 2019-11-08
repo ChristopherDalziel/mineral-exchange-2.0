@@ -12,4 +12,6 @@ types = Type.create([{ name: "Ignous" }, {name: "Sedimentary"}, { name: "Metamor
 # Seeding Australian states into the State model used for signing up new users
 states = State.create([{ name: "QLD"}, {name: "NT"}, { name: "SA"}, {name: "WA"}, { name: "ACT"}, {name: "TAS"}, { name: "NSW"}, {name: "VIC"}])
 
+# user = User.create
+
 # { name: }, {name: },
