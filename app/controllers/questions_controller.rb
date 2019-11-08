@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-      before_action :set_question, only: [ :show, :destroy ]
+  before_action :set_question, only: [ :show, :destroy ]
       
   def index
     @questions = Question.all
@@ -8,10 +8,13 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @question.listing_id = params[:listing_id]
   end
 
   def create
       @question = Question.new(question_params)
+      @question.listing_id = params[ :listing_id ]
+
         if @question.save
           redirect_to listing_path(@question.listing.id)
         else

@@ -1,8 +1,14 @@
-<%= form_with model: question, url: create_question_path(:listing_id), local: true do |form| %>
+<%= form_with model: question, url: create_question_path(question.listing_id), local: true do |form| %>
   <section>
-    <div>
-      <%= form.hidden_field :listing_id, value: params[:listing_id] %>
-    </div>
+     <% if question.errors.any? %>
+        <div id="error_explanation">
+            <ul>
+                <% question.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div><br>
+      <% end %>
     <div>
         <%= form.label :subject %>
         <%= form.text_field :subject %>

@@ -11,11 +11,11 @@
         <% end %>
         <div>
             <%= form.label :first_name %>
-            <%= form.text_field :first_name, :required => true %>
+            <%= form.text_field :first_name, :required => true, :placeholder => "Eg. Bruce" %>
         </div>
         <div>
             <%= form.label :lastname %>
-            <%= form.text_field :lastname, :required => true %>
+            <%= form.text_field :lastname, :required => true, :placeholder => "Eg. Wayne" %>
         </div>
         <div>
             <%= form.label :contact_number %>
@@ -23,7 +23,7 @@
         </div>
         <div>
             <%= form.label :address_line_1 %>
-            <%= form.text_field :address_line_1, :required => true %>
+            <%= form.text_field :address_line_1, :required => true, :placeholder => "Eg. Unit 1" %>
         </div>
          <div>
             <%= form.label :address_line_2 %>
@@ -31,7 +31,7 @@
         </div>
         <div>
             <%= form.label :suburb %>
-            <%= form.text_field :suburb, :required => true %>
+            <%= form.text_field :suburb, :required => true, :placeholder => "Eg. Yarraville" %>
         </div>
         <div>
             <%= form.label :state_id %>

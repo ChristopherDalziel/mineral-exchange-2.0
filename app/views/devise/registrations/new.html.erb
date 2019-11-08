@@ -45,11 +45,11 @@
         <%= f.fields_for :user_detail, UserDetail.new do |ff| %>
          <div>
             <%= ff.label :first_name %>
-            <%= ff.text_field :first_name, :required => true %>
+            <%= ff.text_field :first_name, :required => true, :placeholder => "Eg. Bruce" %>
         </div>
         <div>
             <%= ff.label :lastname %>
-            <%= ff.text_field :lastname, :required => true %>
+            <%= ff.text_field :lastname, :required => true, :placeholder => "Eg. Wayne" %>
         </div>
         <div>
             <%= ff.label :contact_number %>
@@ -57,7 +57,7 @@
         </div>
         <div>
             <%= ff.label :address_line_1 %>
-            <%= ff.text_field :address_line_1, :required => true %>
+            <%= ff.text_field :address_line_1, :required => true, :placeholder => "Eg. Unit 1" %>
         </div>
          <div>
             <%= ff.label :address_line_2 %>
@@ -65,7 +65,7 @@
         </div>
         <div>
             <%= ff.label :suburb %>
-            <%= ff.text_field :suburb, :required => true %>
+            <%= ff.text_field :suburb, :required => true, :placeholder => "Eg. Yarraville" %>
         </div>
         <div>
             <%= ff.label :state_id %>
