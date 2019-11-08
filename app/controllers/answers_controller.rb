@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_user_listing, only: [ :create, :new, :update]
+  before_action :set_user_listing, only: [ :create, :new, :update ]
 
   def index
     @answers = Answers.all
