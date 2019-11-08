@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_user_listing, only: [ :new, :create, :update ]
+  before_action :set_user_listing, only: [ :create, :new, :update]
 
   def index
     @answers = Answers.all
@@ -36,11 +36,6 @@ class AnswersController < ApplicationController
   def set_user_listing
     id = params[:id]
     @answer = current_user.listings.find_by_id(id)
-
-    if @listing == nil
-      redirect_to listings_path
-    end
-    
   end
 
   def answer_params

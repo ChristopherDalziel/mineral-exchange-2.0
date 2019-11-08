@@ -7,9 +7,9 @@
         <%= image_tag @listing.picture if @listing.picture.attached? %>
       </p>
 
-      <strong>Mineral:</strong> <%= @listing.type.name %><br>
-      <strong>Description:</strong> <%= @listing.description %><br>
-      <strong>Location:</strong> <%= @listing.location %><br>
+      <strong>Mineral:</strong> <%= sanitize @listing.type.name %><br>
+      <strong>Description:</strong> <%= sanitize @listing.description %><br>
+      <strong>Location:</strong> <%= sanitize @listing.location %><br>
       <strong>Price:</strong> $<%= @listing.price %><br><br>
       <% if user_signed_in? && current_user.is_seller == false %>
         <button data-stripe="payment">Pay: <%= number_to_currency(@listing.price) %></button><br>
@@ -50,11 +50,11 @@
         <tbody>
           <% @listing.questions.each do |question| %>
           <tr>
-            <td class="qa"><%= question.subject %></td>
-              <td class="qa"><%= question.body %></td>
+            <td class="qa"><%= sanitize question.subject %></td>
+              <td class="qa"><%= sanitize question.body %></td>
 
             <% question.answers.each do |answer| %>
-              <td class="qa"><%= answer.body %><br>
+              <td class="qa"><%= sanitize answer.body %><br>
             <% end %>
                <% if current_user == @listing.user %>
               <td class="qa"><%= link_to 'Answer', new_answer_path(question) %></td>

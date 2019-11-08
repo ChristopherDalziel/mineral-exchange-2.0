@@ -10,9 +10,9 @@
         <%= image_tag @listing.picture if @listing.picture.attached? %>
       </p>
 
-      <strong>Mineral:</strong> <%= @listing.type.name %><br>
-      <strong>Description:</strong> <%= @listing.description %><br>
-      <strong>Location:</strong> <%= @listing.location %><br>
+      <strong>Mineral:</strong> <%= sanitize @listing.type.name %><br>
+      <strong>Description:</strong> <%= sanitize @listing.description %><br>
+      <strong>Location:</strong> <%= sanitize @listing.location %><br>
       <strong>Price:</strong> $<%= @listing.price %><br><br>
       
       <%= link_to 'Back to listings', listings_path %>
