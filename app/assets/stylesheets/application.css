@@ -83,6 +83,21 @@ font-family: 'Montserrat Subrayada', sans-serif;
   
 }
 
+/* Hero box on payment success and fail pages */
+.hero-box-pay {
+  text-align: center;
+  margin-top: 10vh;
+  height: 450px;
+  width: 700px;
+  background-color: white;
+  border: solid black 3px;
+  box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.40);
+}
+
+.hero-box-pay img {
+  height: 225px;
+}
+
 .hero-box h1 {
   font-size: 45px;
 }
@@ -120,3 +135,24 @@ font-family: 'Montserrat Subrayada', sans-serif;
   font-size: 32px;
 }
 
+/* Creating the appearence of buttons on a links */
+a {
+  cursor: pointer;
+  width: 90%;
+  background: black;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 2px;
+  font-style: none;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* A link button hover effects */
+a:hover {
+  background-color: #A57FB6;
+  color: white;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}

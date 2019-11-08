@@ -77,11 +77,12 @@ My target audience for this web marketplace is primarly collects, sellers and bu
 ##### Wireframe
 ![Homepage Wireframe](/app/assets/images/md_images/home_page.png)
 ##### Screenshot
-![Sign up Screenshot](app/assets/images/md_images/home_page_screen.png)
+![Homepage Screenshot](app/assets/images/md_images/home_page_screen.png)
 ### Sign up page
 ##### Wireframe
 ![Sign up Wireframe](/app/assets/images/md_images/sign_up_page.png)
 ##### Screenshot
+![Sign up Screenshot](/app/assets/images/md_images/sign_up_page_screen.png)
 ### Listings page(Buyer)
 ##### Wireframe
 ![Listings Buyer Wireframe](/app/assets/images/md_images/listings_page.png)
@@ -94,22 +95,25 @@ My target audience for this web marketplace is primarly collects, sellers and bu
 ##### Wireframe
 ![Create Listing Wireframe](/app/assets/images/md_images/listing_create_page.png)
 ##### Screenshot
+![Creating Listing Screenshot](/app/assets/images/md_images/listing_create_page_screen.png)
 ### Listings show
 ##### Wireframe
 ![Listing show Wireframe](/app/assets/images/md_images/listing_show.png)
 ##### Screenshot
+![Listing show Screenshot](/app/assets/images/md_images/listing_show_screen.png)
 ### Purchase success
 ##### Wireframe
 ![Purchase success Wireframe](/app/assets/images/md_images/purchase_success_page.png)
 ##### Screenshot
+![Purchase success Screenshot](/app/assets/images/md_images/purchase_success_page_screen.png)
 ### Purchase fail
 ##### Wireframe
 ![Purchase fail Wireframe](/app/assets/images/md_images/purchase_fail_page.png)
-##### Screenshot
 ### Contact Us
 ##### Wireframe
-![Contact us form Wireframe](app/assets/images/md_images/contact_page.png)
+![Contact us form Wireframe](/app/assets/images/md_images/contact_page.png)
 ##### Screenshot
+![Contact us Screenshot](/app/assets/images/md_images/contact_page_screen.png)
 ### Example Mobile Page Views
 ##### Wireframe
 ![Example Mobile Page Views](/app/assets/images/md_images/example_mobile_page_views.png)
@@ -180,14 +184,18 @@ belongs_to :question
 
 
 ## Discuss the database relations to be implemented in your application:
-erd
--
-migrations
-f-keys
-tables erd
+I'm going to discuss the database relations how they're displayed in my ERD and in the order I created my models and why. <br>
 
-heroku run rake db:reset
-heroku run rake db:seed
+Firstly I created my Type/State tables as they hold only a single row of string data, we will come back to their relationships to their linked tables soon, but I created these tables first because they didn't have any rows that needed to access data from another table via a foreign key. It would be these tables that would be accessed.<br>
+Next I moved onto creating my User table, this was created via the devise gem for me however afterwards I run a migration (Filename:20191028035049_fix_d.rb) where I manually added an extra row to the table this would determine when someone signed up what type of user they are. <br>
+Next I created my UserDetail table, this was created to be nested under the User table to give us extra information when new users sign up, this table would have a one to many relationship with the User table meaning each signed up User(There would be many) would have one UserDetail table attached to it, it will also have a many to one relationship with the State table this is because each signed up User(+UserDetails) table will have one state attached. <br>
+Moving onto my biggest table Listing, I created this table towards the end of the process as it accesses the other tables the most and I have to create those tables first not to create errors. The listing table has a one to many relationship with Types which was the table we created first this is because we will have many listings and one Type of mineral per listing. <br>
+The next foreign key to be created will be a one to many relationship between our listing table and our users this will be another one to many relationship as we will have one user per listing, but a user can have as many listings as they want.<br>
+Finally my last two models that I created were Question and Answer, Question is a little bit different to my previous tables it is linked to the listing table via a zero or many relationship this means a listing can have zero questions or many questions so our web app can function without questions. The last table created was Answer answer works in the same way as the question table linked via foreign key the Answer table has a zero or many relationship to our question table so each question can have zero answers or many.<br>
+
+I wanted to be more clear about foreign keys, a foreign key is a system that you can use to associate one table to another, normally this is done by linking one table column to another. Using our tables as an exmaple we have a User table, and we are linking it to the UserDetails table via a foreign key, this uses a column in our UserDetails table that references the User table(Assuming the user_id of the table). The main purpose behind this relation other than gaining access to the data between the tables is to also gain access to ActiveRecord now we can write things such as User.user_details.names instead of the SQL statements.<br>
+
+Outside of my model creation migrations I only had two others, one we spoke about already the fix_d.rb this was to add an extra row into my devise user model and then I made a mistake adding an extra row to my listing model and used a migration to remove it.
 
 ## Provide your database schema design:
 In the schema screen shots below you'll see the different attributes and datatypes I've selected for the models/tables, I thought I would also go over some of the reasoning behind my choices on each table. <br>

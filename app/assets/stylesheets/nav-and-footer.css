@@ -8,8 +8,10 @@
 }
 
 /* link_to links */
-a {
+.nav-a a {
+  background: none;
   color: black;
+  font-size: 15px;
 }
 
 nav {
@@ -46,41 +48,52 @@ text-decoration: none;
   font-size: 14px;
   background-color: white;
   box-shadow: -10px -10px 12px 0px rgba(0,0,0,0.4);
-  }
-  
-  footer {
-    display: flex;
-    justify-content: flex-end;
-    flex-grow: 1;
-    text-transform: uppercase;
-    font-size: 10px;
-    
-  }
-  
-  footer ul {
-    display: flex;
-  }
-  
-  /* Removal of decimals from un-ordered list */
-    footer ul li {
-      list-style: none;
-      padding-right: 5px;
-  }
-  
-  footer ul li a {
-    text-decoration: none;
-  }
+}
 
- .fa-github-square {
-   display: flex;
-   font-size: 15px;
- }
+footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  text-transform: uppercase;
+  font-size: 10px;
+  
+}
+
+footer ul {
+  display: flex;
+}
+
+/* Removal of decimals from un-ordered list */
+  footer ul li {
+    list-style: none;
+    padding-right: 5px;
+}
+
+footer ul li a {
+  text-decoration: none;
+}
+
+.fa-github-square {
+  display: flex;
+  font-size: 15px;
+}
 
  /* hover display on var bar */
- a:hover {
+ .nav-a a:hover {
   background-color: #9AD3AE;
   color: white;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
+}
+
+/* Removing and changing effects from git-hub logo in footer */
+.git-logo a:hover{
+  background: none;
+  color: #FEC55C;
+}
+
+.git-logo a {
+  background: none;
+  color: black;
 }

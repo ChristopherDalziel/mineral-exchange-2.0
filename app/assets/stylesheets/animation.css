@@ -7,6 +7,7 @@
     opacity: 1;
   }
 }
+
 /* Homescreen logo */
 .logo, h1 {
   animation: fadeInAnimation ease 3s;
@@ -21,11 +22,12 @@
 }
 
 /*  */
-.test form input[value="Sign up"],[value="Login"] {
+.test form input {
   animation: fadeInAnimation ease 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+
 /* Grid animation of buyers listing page */
 .grid-item {
   animation: fadeInAnimation ease 1s;
@@ -50,4 +52,9 @@ table {
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+/* Remove animation from nav-bar a links */
+.nav-a a {
+  animation: none;
 }
