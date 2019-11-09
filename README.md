@@ -66,7 +66,7 @@ My target audience for this web marketplace is primarily collects, sellers and b
 - [Heroku](www.heroku.com/) (Deployment)
 
 ##### Gems
-- Devise (For handling user sign ups)c
+- Devise (For handling user sign ups)
 
 # Epic/Stories
 ![Epic with Stories](/app/assets/images/md_images/Stories.jpeg)
