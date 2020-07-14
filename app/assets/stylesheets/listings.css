@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   overflow-x: scroll;
   height: 88%;
   width: 100vw;
